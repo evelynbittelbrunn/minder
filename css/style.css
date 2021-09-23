@@ -7,7 +7,7 @@
 }
 
 body{
-    background-color: /*#0E1114*/ #C0BABB;
+    background-color: #0E1114;
 }
 
 li{
@@ -42,6 +42,30 @@ header{
 .pesquisar{
     width: 50%;
 }
+
+/* Mudar aqui, Evelyn */
+.card-question{
+    background-color: #1D2329;
+    padding: 30px 20px;
+    margin: auto;
+    max-width: 80%;
+    border-radius: 5px;
+}
+
+.cont-text{
+    margin-bottom: 20px;
+    font-size: 16px;
+    color:#C0BABB;
+}
+
+.question-text{
+    margin-bottom: 60px;
+    font-size: 16px;
+    line-height: 1.4;
+    color:#C0BABB;
+}
+
+/* Mudar acima, Evelyn */
 
 .pesquisar form{
     display: flex;

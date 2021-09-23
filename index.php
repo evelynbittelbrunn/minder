@@ -8,7 +8,7 @@
     <link href='css/style.css' rel='stylesheet'>
     <!-- ÍCONES -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>    
-    <title>Minder Vestibulares</title>
+    <title>Minder | Vestibulares</title>
 </head>
 <body>
     
