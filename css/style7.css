@@ -1,0 +1,281 @@
+body{
+    background-color: #1D2329;
+    margin: 0px;
+}
+
+#cabecalho{
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0px;
+    flex-direction: row;
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    height: 70px;
+}
+
+.campo{
+    padding-top: 5px;
+    font-size: 15px;
+}
+
+.principal{
+    background-color: #12171D;
+    width: 60%;
+    padding-bottom: 50px;
+    border-radius: 27px;
+    padding-top: 25px;
+    padding-left: 55px;
+    padding-right: 55px;
+    box-sizing: border-box;
+    font-family: Montserrat,Arial, Helvetica, sans-serif;
+    color: #BCBCBC;
+    position: absolute;
+    left: 22%;
+    top: 13%;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.principal .campo input{
+    width: 100%;
+    height: 30px;
+    font-weight: bold;
+    font-family: Montserrat,Arial, Helvetica, sans-serif;
+    color: white;
+    border: 0px;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #1D2329;
+    border-radius: 5px;
+}
+
+.principal .campo textarea{
+    width: 100%;
+    height: 100px;
+    font-weight: bold;
+    font-family: Montserrat,Arial, Helvetica, sans-serif;
+    color: white;
+    border: 0px;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #1D2329;
+    border-radius: 5px;
+    resize: none;
+}
+
+.principal .campo1 select{
+    width: 65%;
+    height: 35px;
+    padding: 10px;
+    border: none;
+    font-family: Montserrat,Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: #1D2329;
+}
+
+.principal .campo1 input{
+    width: 20%;
+    height: 30px;
+    font-weight: bold;
+    font-family: Montserrat,Arial, Helvetica, sans-serif;
+    color: white;
+    border: 0px;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #1D2329;
+    border-radius: 5px;
+}
+
+.principal .campo2 label{
+    width: 20%;
+    height: 50px;
+    font-family: Montserrat,Arial, Helvetica, sans-serif;
+    color: #BCBCBC;
+    border: 0px;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #1D2329;
+    border-radius: 5px;
+}
+
+.principal .campo2 input{
+    display: none;
+}
+
+.container{
+    background-color: #1D2329;
+    float: left;
+    width: 100%;
+    height: 70px;
+    margin: 1 auto;
+    border-bottom: solid 1px #5f5959;
+    box-shadow: 0.5px 0.5px 10px #2b2929;
+    text-align: center;
+}
+
+.container h1{
+    color: white;
+    font-family: Montserrat,Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: normal;
+    float: 0px auto 0px auto 0px;
+    text-align: center;
+}
+
+.container h2{
+    color: white;
+    font-family: Montserrat,Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    float: 0px auto 0px auto 0px;
+    text-align: center;
+}
+
+.botao{
+    width: 160px;
+    height: 40px;
+    border-color: white;
+    border-radius: 27px;
+    background-color: transparent;
+    font-family: Montserrat,Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 16px;
+    float: left;
+    display: inline-block;
+}
+
+.botao_crud{
+    width: 160px;
+    height: 40px;
+    border-color: white;
+    border-radius: 27px;
+    background-color: transparent;
+    font-family: Montserrat,Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 16px;
+    float: left;
+    display: inline-block;
+    margin-right: 7px;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+#bot_quest{
+    margin-left: 28px;
+    margin-right: 10px;
+}
+
+.botao:hover{
+    border-color: rgb(161, 99, 245);
+    color: rgb(161, 99, 245);
+}
+
+                    /* BODY */
+
+.corpo{
+    width: 1050px;
+    height: 750px;
+    margin: 120px auto 0px auto;
+}
+
+.link_geral{
+    text-decoration: none;
+    color: black;
+}
+
+                    /* CARDS */
+
+.card_materia{
+    width: 200px;
+    height: 200px;
+    background-color: #1D2329;
+    border-radius: 20px;
+    display: inline-block;
+    float: left;
+    margin-left: 50px;
+    box-shadow: 0.5px 0.5px 10px black;
+    box-sizing: border-box;
+}
+
+.card_materia:hover{
+    box-shadow: 0.5px 0.5px 5px #5f5959;
+}
+
+.top_card{
+    width: 200px;
+    height: 100px;
+    border-radius: 20px 20px 0px 0px;
+    background-color: #1D2329;
+    float: left;
+    border: none;
+}
+
+.bott_card{
+    width: 200px;
+    height: 100px;
+    background-color: #1D2329;
+    border-radius: 0px 0px 20px 20px;
+    float: left;
+}
+
+.h2_card{
+    padding-top: 48px;
+    color: #bcbcbc;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    margin-top: -2px;
+    margin-left: 11px;
+}
+
+.linha_card{
+    width: 1050px;
+    height: 250px;
+}
+
+.img_cards{
+    border-radius: 20px 20px 0px 0px;
+}
+
+.radio{
+    /*align-items: center;*/
+    
+    text-align: center;
+    cursor: pointer;
+    transform: translate(10%, 165%);
+}
+
+.radio__input{
+    display: none;
+}
+
+.radio__radio{
+    width: 1.00em;
+    height: 1.00em;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-sizing: border-box;
+    padding: 3px;
+    float: left;
+    margin-left: 8px;
+    margin-top: 1px;
+    /*display: inline-block;*/
+}
+
+.radio__radio::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: rgb(161, 99, 245);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.15s;
+}
+
+.radio__input:checked + .radio__radio::after{
+    transform: scale(1);
+}
