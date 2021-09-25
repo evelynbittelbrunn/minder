@@ -460,6 +460,7 @@ header{
 .card-header img{
     width: 100%;
     height: 100%;
+    border-radius: 13px 13px 0 0;
 }
 
 .card-bottom .caixa-texto{
@@ -511,9 +512,10 @@ header{
 .caixa-texto-quantidade-questoes{
     display: flex;
     align-items: center;
-    margin: 10px auto 0 auto;
+    margin: 0px auto 0 auto;
     text-align: center;
     justify-content: center;
+    color: #C0BABB;
 }
 
 .caixa-texto-quantidade-questoes svg{
@@ -1034,3 +1036,39 @@ header{
 .questao-row svg{
     width: 18px;
 }
+
+/*  ASSUNTOS  */
+
+
+.card-assunto{
+    width: 240px;
+    height: 215px;
+    /*background-color: #171C21;*/
+    border-radius: 45px;
+    border: 1px solid #C0BABB;
+    margin: 0 auto;    
+    transition: all 0.8s ease;
+}
+
+.card-assunto:hover{
+    /*transform: translateY(-10px);*/  
+    background-color: #4516A9;
+    border: 1px solid #4516A9;
+}
+
+.content-assunto{
+    height: 170px;
+    /*border: 1px solid #4516A9;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-assunto h4{
+    /*margin: 0 auto;*/
+    padding: 0 15px;
+    color: #C0BABB;
+    font-size: 1.4em;    
+    *border: 1px solid #4516A9;*/
+}
+
