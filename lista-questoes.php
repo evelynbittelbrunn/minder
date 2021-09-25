@@ -107,20 +107,28 @@
                 <h3>Lista de questões</h3>
                 <p>Questões sobre Análise Combinatória (Matemática)</p>
             </div>
-            <div class="filtros">
-                <div class="filtro">Banca 
-                    <section>
-
-                    </section>
-                    <span class="seta"></span>
-                </div>
-                <div class="filtro">Ano 
-                    <section>
-                        
-                    </section>
-                    <span class="seta"></span>
-                </div>
-                <input type="checkbox" name="" id="">
+            <div class="filtros-container">
+                <div class="filtros">
+                    <div class="caixa-select">
+                        <select class="filtro select" name="" id="">
+                            <option value="">ANO</option>
+                            <option value="">2009</option>
+                            <option value="">2020</option>
+                        </select>                    
+                    </div>  
+                    <div class="caixa-select">
+                        <select class="filtro select" name="" id="">
+                            <option value="">BANCA</option>
+                            <option value="">ENEM</option>
+                            <option value="">UERJ</option>
+                        </select>                    
+                    </div>  
+                    <div class="caixa-check">                    
+                        <input type="checkbox" name="" id="check-respondida">
+                        <label for="check-respondida">Não respondidas</label>
+                    </div>  
+                </div>  
+                <div class="botao-filtro">FILTRAR</div>                    
             </div>
             <div class="questoes-container-content">
                 <?php echo montaListaQuestoes(); ?>
