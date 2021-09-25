@@ -105,7 +105,7 @@
         <div class="questoes-container">
             <div class="cards-container-titulo">
                 <h3>Lista de questões</h3>
-                <p>Questões sobre Análise Combinatória (Matemática)</p>
+                <p>Questões sobre <?php echo descrAssunto($_GET['a']); ?> (<?php echo descrMateria($_GET['m']);?>)</p>
             </div>
             <div class="filtros-container">
                 <div class="filtros">
@@ -131,7 +131,7 @@
                 <div class="botao-filtro">FILTRAR</div>                    
             </div>
             <div class="questoes-container-content">
-                <?php echo montaListaQuestoes(); ?>
+                <?php echo montaListaQuestoes($_GET['m'],$_GET['a']); ?>
             </div>
         </div>
     </div>

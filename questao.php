@@ -107,7 +107,7 @@
                 <div class="cont-text" align="center">
                     23/58
                 </div>
-                    <?php echo montaQuestao(1); ?>
+                    <?php echo montaQuestao($_GET['q']); ?>
             </div>
         </div>
     </div>

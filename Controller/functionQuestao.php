@@ -3,7 +3,7 @@
 function montaQuestao($idQuestao){
 
     include('conexao.php');
-    $sql = "SELECT * FROM tb_Questao WHERE idQuestao = ".$idQuestao.";";
+    $sql = "SELECT * FROM tb_Questao WHERE MD5(idQuestao) = '".$idQuestao."';";
 
     $result = mysqli_query($conn,$sql);
     mysqli_close($conn);
