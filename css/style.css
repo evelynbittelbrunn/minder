@@ -52,6 +52,15 @@ header{
     border-radius: 5px;
 }
 
+.card-progress{
+    background-color: #1D2329;
+    padding: 30px 20px;
+    margin: auto;
+    max-width: 80%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
 .cont-text{
     margin-bottom: 20px;
     font-size: 16px;

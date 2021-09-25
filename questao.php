@@ -103,38 +103,63 @@
     </header>
     <div class="home-content">
         <div class="questoes-container">
-            <div class="card-question">
-                <div class="cont-text" align="center">
-                    23/58
+            <form method="POST" enctype="multipart/form-data" id="iQuestao">
+                <div class="card-progress">
+                    Colocar a progressbar
                 </div>
-                    <?php echo montaQuestao($_GET['q']); ?>
-            </div>
+                <div class="card-question">
+                    <div class="cont-text" align="center">
+                        23/58
+                    </div>
+                        <?php echo montaQuestao($_GET['q']); ?>
+                </div>
+            </form>
         </div>
     </div>
-    <script>
-        let btn = document.querySelector("#btn-menu");
-        let sidebar = document.querySelector(".sidebar");
+<!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    let btn = document.querySelector("#btn-menu");
+    let sidebar = document.querySelector(".sidebar");
 
-        btn.onclick = function() {
-            sidebar.classList.toggle("active");
-        }
+    btn.onclick = function() {
+        sidebar.classList.toggle("active");
+    }
 
-        // MENU RESPONSIVE
-        let btn2 = document.querySelector("#btn-menu-2");
-        let sidebar2 = document.querySelector(".sidebar");
+    // MENU RESPONSIVE
+    let btn2 = document.querySelector("#btn-menu-2");
+    let sidebar2 = document.querySelector(".sidebar");
 
-        btn2.onclick = function() {
-            sidebar2.classList.toggle("active");
-        }
+    btn2.onclick = function() {
+        sidebar2.classList.toggle("active");
+    }
 
-        /// DROP DOWN
-        let img  = document.querySelector("#btn-drop");
-        let drop = document.querySelector("#drop-down");
+    /// DROP DOWN
+    let img  = document.querySelector("#btn-drop");
+    let drop = document.querySelector("#drop-down");
 
-        img.onclick = function() {
-            drop.classList.toggle("drop-active");
-        }
-       
-    </script>
+    img.onclick = function() {
+        drop.classList.toggle("drop-active");
+    }
+
+    function proximaQuestao(){
+        const urlParams = new URLSearchParams(location.search);
+        //alert(urlParams)
+        $('#iQuestao').attr('action','Controller/carregaProxQuestao.php'
+            +'?q='+urlParams.get('q')
+            +'&a='+urlParams.get('a'));
+        $("#iQuestao").submit();
+    }
+
+    function anteriorQuestao(){
+        const urlParams = new URLSearchParams(location.search);
+        //alert(urlParams)
+        $('#iQuestao').attr('action','Controller/carregaAntQuestao.php'
+            +'?q='+urlParams.get('q')
+            +'&a='+urlParams.get('a'));
+        $("#iQuestao").submit();
+    }
+    
+</script>
 </body>
 </html>

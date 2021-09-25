@@ -41,6 +41,20 @@ function montaQuestao($idQuestao){
 
     }
 
+    $lista .= '<div>'
+                .'<div align="right">'
+                    .'<a href="#" onclick="proximaQuestao();">'
+                        .'<span>PRÓXIMO</span>'
+                    .'</a>'
+                .'</div>'
+                
+                .'<div align="left">'
+                    .'<a href="#" onclick="anteriorQuestao();">'
+                        .'<span>ANTERIOR</span>'
+                    .'</a>'
+                .'</div>'
+            .'</div>';
+
     return $lista;
 }
 ?>
