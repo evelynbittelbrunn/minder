@@ -16,10 +16,11 @@
 <body>
     <div class="sidebar">
         <div class="logo-content">
-            <div class="logo">
-                <i class='bx bxs-virus'></i>
-                <div class="logo-nome">Minder ;)</div>
-            </div>
+            <a href="index.php">
+                <div class="logo">
+                    <img src="img/logo-minder3.png" class="logo-img" alt="Minder Vestibulares">                                
+                </div>
+            </a> 
             <div id="btn-menu">
                 <div class="menu-hamburguer"></div>
             </div>            
