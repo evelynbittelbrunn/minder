@@ -17,10 +17,11 @@
     
     <div class="sidebar">
         <div class="logo-content">
-            <div class="logo">
-                <i class='bx bxs-virus'></i>
-                <div class="logo-nome">Minder ;)</div>
-            </div>
+            <a href="index.php">
+                <div class="logo">
+                    <img src="img/logo-minder3.png" class="logo-img" alt="Minder Vestibulares">                                
+                </div>
+            </a> 
             <div id="btn-menu">
                 <div class="menu-hamburguer"></div>
             </div>            
@@ -77,31 +78,40 @@
             <div class="filtros-container">
                 <div class="filtros">
                     <div class="caixa-select">
-                        <select class="filtro select" name="" id="">
+                        <select class="filtro select" id="iAnoFiltro" name="" id="">
                             <option value="">ANO</option>
-                            <option value="">2009</option>
-                            <option value="">2020</option>
+                            <?php echo listaAnoSelect($_GET['m'],$_GET['a']); ?>
                         </select>                    
                     </div>  
                     <div class="caixa-select">
-                        <select class="filtro select" name="" id="">
+                        <select class="filtro select" id="iBancaFiltro" name="" id="">
                             <option value="">BANCA</option>
-                            <option value="">ENEM</option>
-                            <option value="">UERJ</option>
+                            <?php echo listaBancaSelect($_GET['m'],$_GET['a']); ?>
                         </select>                    
                     </div>  
                     <div class="caixa-check">                    
-                        <input type="checkbox" name="" id="check-respondida">
-                        <label for="check-respondida">Não respondidas</label>
+                        <input type="checkbox" id="iRespondidasFiltro" name="" id="check-respondida">
+                        <label for="iRespondidasFiltro">Não respondidas</label>
                     </div>  
+                    <input type="text" id="iMateria" value="<?php echo $_GET['m']; ?>" hidden>
+                    <input type="text" id="iAssunto" value="<?php echo $_GET['a']; ?>" hidden>
                 </div>  
-                <div class="botao-filtro">FILTRAR</div>                    
+                <a href="#" id="iFiltro">
+                    <div class="botao-filtro">FILTRAR</div>  
+                </a>                                  
             </div>
             <div class="questoes-container-content">
                 <?php echo montaListaQuestoes($_GET['m'],$_GET['a']); ?>
             </div>
         </div>
     </div>
+    <!-- JQUERY -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script src="master.js"></script>
+
     <script>
         let btn = document.querySelector("#btn-menu");
         let sidebar = document.querySelector(".sidebar");

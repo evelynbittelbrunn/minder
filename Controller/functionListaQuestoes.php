@@ -1,4 +1,72 @@
 <?php
+
+//Monta a lista de ano
+function listaAnoSelect($idMateria,$idAssunto){
+
+    include('conexao.php');
+    $sql = "SELECT DISTINCT Ano FROM tb_Questao "
+            ." WHERE MD5(idTipoMateria) = '".$idMateria."' "
+            ." AND MD5(idTipoAssunto) = '".$idAssunto."' "
+            ." ORDER BY Ano DESC;";
+
+    $result = mysqli_query($conn,$sql);
+    mysqli_close($conn);
+
+    $lista = '';
+
+    if (mysqli_num_rows($result) > 0) {
+
+		$array = array();
+		
+		while ($linha = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+			array_push($array,$linha);
+		}
+    
+        foreach ($array as $campo) {
+            $lista .= '<option value="'.$campo['Ano'].'">'.$campo['Ano'].'</option>';
+
+        }
+
+    }
+
+    return $lista;
+}
+
+//Monta a lista de ano
+function listaBancaSelect($idMateria,$idAssunto){
+
+    include('conexao.php');
+    $sql = "SELECT DISTINCT ban.Descricao, ban.idBanca "
+            ." FROM tb_Banca ban "
+            ." INNER JOIN tb_Questao ques "
+            ." ON ban.idBanca = ques.idBanca "
+            ." WHERE MD5(ques.idTipoMateria) = '".$idMateria."' "
+            ." AND MD5(ques.idTipoAssunto) = '".$idAssunto."' "
+            ." ORDER BY DEscricao;";
+
+    $result = mysqli_query($conn,$sql);
+    mysqli_close($conn);
+
+    $lista = '';
+
+    if (mysqli_num_rows($result) > 0) {
+
+		$array = array();
+		
+		while ($linha = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+			array_push($array,$linha);
+		}
+    
+        foreach ($array as $campo) {
+            $lista .= '<option value="'.$campo['idBanca'].'">'.$campo['Descricao'].'</option>';
+
+        }
+
+    }
+
+    return $lista;
+}
+
 //Monta a lista de questões
 function montaListaQuestoes($idMateria,$idAssunto){
 
