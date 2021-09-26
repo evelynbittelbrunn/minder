@@ -19,6 +19,11 @@ a{
     color: #C0BABB;
 }
 
+.selected{
+    background-color: white;
+    border-radius: 12px;
+}
+
 body{
     position: relative;
     min-height: 100vh;

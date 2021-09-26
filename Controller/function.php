@@ -1,7 +1,8 @@
 <?php
     include('Controller/functionAssuntos.php');
     include('Controller/functionListaQuestoes.php');
-    include('Controller/functionMateria.php'); 
+    include('Controller/functionMateria.php');
+	include('Controller/functionMenu.php');
     include('Controller/functionQuestao.php');
 
 //Buscar o ID do código MD5
