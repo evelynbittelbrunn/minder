@@ -79,6 +79,15 @@ header{
     color:#C0BABB;
 }
 
+.card-cadastro {
+    background-color: #1D2329;
+    padding: 30px 20px;
+    margin: auto;
+    max-width: 80%;
+    border-radius: 5px;
+    height: 500px;
+}
+
 /* Mudar acima, Evelyn */
 
 .pesquisar form{
