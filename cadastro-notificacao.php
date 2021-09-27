@@ -19,7 +19,7 @@
     
     <div class="sidebar">
         <div class="logo-content">
-            <a href="index">
+            <a href="index.php">
                 <div class="logo">
                     <img src="img/logo-minder3.png" class="logo-img" alt="Minder Vestibulares">                                
                 </div>
@@ -43,7 +43,7 @@
                     <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-search fa-w-16 fa-2x"><path fill="currentColor" d="M508.5 481.6l-129-129c-2.3-2.3-5.3-3.5-8.5-3.5h-10.3C395 312 416 262.5 416 208 416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c54.5 0 104-21 141.1-55.2V371c0 3.2 1.3 6.2 3.5 8.5l129 129c4.7 4.7 12.3 4.7 17 0l9.9-9.9c4.7-4.7 4.7-12.3 0-17zM208 384c-97.3 0-176-78.7-176-176S110.7 32 208 32s176 78.7 176 176-78.7 176-176 176z" class=""></path></svg>
                 </button>
             </form>        
-        </div>
+        </div>    
         <div class="foto-perfil">
             <a href="#" id="btn-drop"><img class="img-perfil" src="<?php echo $_SESSION['FotoUsuario']; ?>" alt=""></a>
             <div class="drop-down-menu"  id="drop-down">
@@ -61,76 +61,50 @@
                 </div>
                 <h5>Configurações</h5>
             </div>
-        </div>      
+        </div>    
     </header>
     <div class="home-content">
         <div class="questoes-container">
-            <div class="cards-container-titulo">
-                <h3>Lista de questões</h3>
-                <p>Questões sobre <?php echo descrAssunto($_GET['a']); ?> (<?php echo descrMateria($_GET['m']);?>)</p>
-            </div>
-            <div class="filtros-container">
-                <div class="filtros">
-                    <div class="caixa-select">
-                        <select class="filtro select" id="iAnoFiltro" name="" id="">
-                            <option value="">ANO</option>
-                            <?php echo listaAnoSelect($_GET['m'],$_GET['a']); ?>
-                        </select>                    
-                    </div>  
-                    <div class="caixa-select">
-                        <select class="filtro select" id="iBancaFiltro" name="" id="">
-                            <option value="">BANCA</option>
-                            <?php echo listaBancaSelect($_GET['m'],$_GET['a']); ?>
-                        </select>                    
-                    </div>  
-                    <div class="caixa-check">                    
-                        <input type="checkbox" id="iRespondidasFiltro" name="" id="check-respondida">
-                        <label for="iRespondidasFiltro">Não respondidas</label>
-                    </div>  
-                    <input type="text" id="iMateria" value="<?php echo $_GET['m']; ?>" hidden>
-                    <input type="text" id="iAssunto" value="<?php echo $_GET['a']; ?>" hidden>
-                </div>  
-                <a href="#" id="iFiltro">
-                    <div class="botao-filtro">FILTRAR</div>  
-                </a>                                  
-            </div>
-            <div class="questoes-container-content">
-                <?php echo montaListaQuestoes($_GET['m'],$_GET['a']); ?>
-            </div>
+            <form method="POST" action="Controller/salvaNotificacao.php" enctype="multipart/form-data" id="iQuestao">
+                <div class="card-cadastro">
+                    <h3 class="cont-text" align="center">Cadastro de notificações - (Mudar estética)</h3>
+                        <label for="iNotificacao">Descrição:</label>
+                        <input type="text" name="nID" visible="false" value="<?php echo $_SESSION['idNotificacao']; ?>" hidden>
+                        <textarea name="nNotificacao" id="iNotificacao" cols="30" rows="10"></textarea>
+                        <br>
+                        <label for="iReferencia">Referência (Link): </label>
+                        <input type="text" id="iReferencia" name="nReferencia">
+                        <button>Enviar</button>
+                </div>
+            </form>
         </div>
     </div>
+<!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    let btn = document.querySelector("#btn-menu");
+    let sidebar = document.querySelector(".sidebar");
+
+    btn.onclick = function() {
+        sidebar.classList.toggle("active");
+    }
+
+    // MENU RESPONSIVE
+    let btn2 = document.querySelector("#btn-menu-2");
+    let sidebar2 = document.querySelector(".sidebar");
+
+    btn2.onclick = function() {
+        sidebar2.classList.toggle("active");
+    }
+
+    /// DROP DOWN
+    let img  = document.querySelector("#btn-drop");
+    let drop = document.querySelector("#drop-down");
+
+    img.onclick = function() {
+        drop.classList.toggle("drop-active");
+    }
     
-    <!-- JQUERY -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
-    <script src="master.js"></script>
-
-    <script>
-        let btn = document.querySelector("#btn-menu");
-        let sidebar = document.querySelector(".sidebar");
-
-        btn.onclick = function() {
-            sidebar.classList.toggle("active");
-        }
-
-        // MENU RESPONSIVE
-        let btn2 = document.querySelector("#btn-menu-2");
-        let sidebar2 = document.querySelector(".sidebar");
-
-        btn2.onclick = function() {
-            sidebar2.classList.toggle("active");
-        }
-
-        /// DROP DOWN
-        let img  = document.querySelector("#btn-drop");
-        let drop = document.querySelector("#drop-down");
-
-        img.onclick = function() {
-            drop.classList.toggle("drop-active");
-        }
-       
-    </script>
+</script>
 </body>
 </html>

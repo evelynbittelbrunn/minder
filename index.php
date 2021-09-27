@@ -55,20 +55,12 @@
                 <div id="notificacoes-container" class="notificacoes-container">
                     <h5>Notificações</h5>
                     <div class="notificacoes-content">
-                        <div class="notificacao">
-                            <p>Você já conferiu as novas questões de Citologia? Não? Então venha conferir clicando aqui.</p>
-                        </div>
-                        <div class="notificacao">
-                            <p>Novo banco na área! Questões da categoria ITA estão aí! Confira.</p>
-                        </div>
-                        <div class="notificacao">
-                            <p>Você já conferiu as novas questões de Citologia? Não? Então venha conferir clicando aqui.</p>
-                        </div>
+                        <?php echo montaListaNotificacoes($_SESSION['idUsuario']); ?>
                     </div>                    
                 </div>
                 <h5>Configurações</h5>
             </div>
-        </div>        
+        </div>    
     </header>
     <div class="home-content">
         <div class="cards-container">

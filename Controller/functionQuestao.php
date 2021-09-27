@@ -57,4 +57,37 @@ function montaQuestao($idQuestao){
 
     return $lista;
 }
+
+//
+function consultaUsuariosComuns(){
+    include('conexao.php');
+
+    $sql = "SELECT * FROM tb_Usuario WHERE idUsuario = 2;";
+    var_dump($sql);
+    die();
+    $result = mysqli_query($conn,$sql);    
+    mysqli_close($conn);
+
+    if (mysqli_num_rows($result) > 0) {
+        $array = array();
+        
+        while ($linha = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+            array_push($array,$linha);
+        }
+    
+        foreach ($array as $campo) {
+            $sql = "INSERT INTO tb_Notificacao (Descricao, idUsuario, Referencia)"
+                    ." VALUES(".$descricao.","
+                                .$campo['idUsuario'].","
+                                .$referencia.");";
+            var_dump($sql);
+            die();
+                    
+            $result = mysqli_query($conn,$sql);    
+            mysqli_close($conn);
+
+        }
+
+    }
+}
 ?>
