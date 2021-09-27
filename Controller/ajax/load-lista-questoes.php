@@ -20,7 +20,9 @@ if($banca != 0){
     $queryBanca = "";
 }
 
-if($resp == true){
+if($resp == 'true'){
+    $queryRespondidas = " AND idQuestao NOT IN (SELECT idQuestao FROM tb_RespostaUsuario WHERE idUsuario = ".$_SESSION['idUsuario'].") ";
+}else{
     $queryRespondidas = "";
 }
 
@@ -29,7 +31,9 @@ $sql = $pdo->query("SELECT * FROM tb_Questao "
                     ." WHERE MD5(idTipoMateria) = '".$materia."' "
                     ." AND MD5(idTipoAssunto) = '".$assunto."' "
                     .$queryAno
-                    .$queryBanca.";");
+                    .$queryBanca
+                    .$queryRespondidas
+                    ." ORDER BY Ano DESC;");
 
 if($sql->rowCount() > 0){
     foreach($sql->fetchAll() as $campo){
@@ -52,6 +56,12 @@ if($sql->rowCount() > 0){
             .'</a>';
 
     }
+}else{
+    echo '
+
+    <div class="mensagem-resultado-filtro">
+        <h2>Que pena, sua filtragem não obteve resultados... <br> Dica: tente usar menos regras :D</h2>
+    </div>';
 }
 
 ?>

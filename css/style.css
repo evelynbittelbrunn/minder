@@ -981,6 +981,15 @@ header{
     outline: 0;
 }
 
+.mensagem-resultado-filtro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #C0BABB;
+    padding: 10% 0 0 0;
+}
+
 .botao-filtro{
     font-weight: 600;
     padding: 5px;
