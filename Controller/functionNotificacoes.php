@@ -23,7 +23,7 @@ function montaListaNotificacoes($idUsuario){
         foreach ($array as $campo) {
             $lista .= 
             '<div class="notificacao">'
-                .'<p>'.$campo['Descricao'].'</p>'
+                .'<a href="'.$campo['Referencia'].'"><p>'.$campo['Descricao'].'</p></a>'
             .'</div>';
 
         }
