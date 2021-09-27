@@ -1,6 +1,9 @@
 <?php
 	session_start();
     include('Controller/function.php');
+    if ($_SESSION['logado'] == 0 || $_SESSION['idTipoUsuario'] != 1) {
+        header('location: ../minder/login.php');
+    }
     carregaPerfil($_SESSION['idUsuario']);
 ?>
 <!DOCTYPE html>
@@ -29,7 +32,7 @@
             </div>            
         </div>
         <ul class="navegacao">
-            <?php echo montaMenu('index'); ?>
+            <?php echo montaMenu('cadastro-notificacao'); ?>
         </ul>
     </div>
     <header>
