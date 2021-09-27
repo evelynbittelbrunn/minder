@@ -17,7 +17,7 @@
     
     <div class="sidebar">
         <div class="logo-content">
-            <a href="index.php">
+            <a href="index">
                 <div class="logo">
                     <img src="img/logo-minder3.png" class="logo-img" alt="Minder Vestibulares">                                
                 </div>
@@ -105,6 +105,7 @@
             </div>
         </div>
     </div>
+    
     <!-- JQUERY -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 

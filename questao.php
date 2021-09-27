@@ -17,7 +17,7 @@
     
     <div class="sidebar">
         <div class="logo-content">
-            <a href="index.php">
+            <a href="index">
                 <div class="logo">
                     <img src="img/logo-minder3.png" class="logo-img" alt="Minder Vestibulares">                                
                 </div>
@@ -81,11 +81,25 @@
                     </div>
                         <?php echo montaQuestao($_GET['q']); ?>
                 </div>
+                <a href="#" onClick="validaQuestao('<?php echo $_GET['q']; ?>')">VALIDAR QUESTÃO</a>
+
+                <br>
+                <br>
+                <a href="#" onClick="mostraResposta('<?php echo $_GET['q']; ?>')">MOSTRAR RESPOSTA</a>
+                
             </form>
         </div>
     </div>
 <!-- Scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- JQUERY -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script src="master.js"></script>
+
 <script>
     let btn = document.querySelector("#btn-menu");
     let sidebar = document.querySelector(".sidebar");
@@ -126,6 +140,86 @@
             +'?q='+urlParams.get('q')
             +'&a='+urlParams.get('a'));
         $("#iQuestao").submit();
+    }
+
+    // VALIDAÇÃO RESPOSTA
+    function validaQuestao(questao){
+
+        var radioA = document.querySelector("#radioA").checked;
+        var radioB = document.querySelector("#radioB").checked;
+        var radioC = document.querySelector("#radioC").checked;
+        var radioD = document.querySelector("#radioD").checked;
+        var radioE = document.querySelector("#radioE").checked;        
+
+        $.ajax({
+            url: "Controller/ajax/load-resposta-questao.php?q="+questao,
+            success: function(result){
+                
+                if(radioA == true){
+                    if(result == 'A'){
+                        alert('Acertou!');
+                    }else{
+                        alert('Errou!');
+                    }
+                }else if(radioB == true){
+                    if(result == 'B'){
+                        alert('Acertou!');
+                    }else{
+                        alert('Errou!');
+                    }
+                }else if(radioC == true){
+                    if(result == 'C'){
+                        alert('Acertou!');
+                    }else{
+                        alert('Errou!');
+                    }
+                }else if(radioD == true){
+                    if(result == 'D'){
+                        alert('Acertou!');
+                    }else{
+                        alert('Errou!');
+                    }
+                }else if(radioE == true){
+                    if(result == 'E'){
+                        alert('Acertou!');
+                    }else{
+                        alert('Errou!');
+                    }
+                }
+                
+            },
+            error: function(result){
+                $(".questoes-container-content").html(result);
+                
+            }            
+        });   
+    }
+
+    function mostraResposta(questao){
+
+        $.ajax({
+            url: "Controller/ajax/load-resposta-questao?q="+questao,
+            success: function(result){
+                
+                if(result == 'A'){
+                    document.querySelector("#radioA").checked = true;
+                }else if(result == 'B'){
+                    document.querySelector("#radioB").checked = true;
+                }else if(result == 'C'){
+                    document.querySelector("#radioC").checked = true;
+                }else if(result == 'D'){
+                    document.querySelector("#radioD").checked = true;
+                }else if(result == 'E'){
+                    document.querySelector("#radioE").checked = true;
+                }
+                
+            },
+            error: function(result){
+                $(".questoes-container-content").html(result);
+                
+            }
+        }); 
+
     }
     
 </script>

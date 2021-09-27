@@ -10,7 +10,7 @@
         <br>
         <button>Enviar</button>
         <br>
-        <a href="index.php">Fazer Login</a>
+        <a href="index">Fazer Login</a>
         <br>
     </form> 
 </body>    

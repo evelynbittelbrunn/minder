@@ -18,7 +18,7 @@
 <body>
     <div class="sidebar">
         <div class="logo-content">
-            <a href="index.php">
+            <a href="index">
                 <div class="logo">
                     <img src="img/logo-minder3.png" class="logo-img" alt="Minder Vestibulares">                                
                 </div>
@@ -78,7 +78,7 @@
             </div>
             <div class="cards-container-row">
                 <!--<div class="card-caixa">-->
-                    <a href="assuntos.php?m=<?php echo MD5(1); ?>">
+                    <a href="assuntos?m=<?php echo MD5(1); ?>">
                         <div class="card">
                             <div class="card-header">
                                 <img src="img/pitagoras-estatua.jpg" alt="">
@@ -98,7 +98,7 @@
                         </div>
                     </a>                    
                 <!--</div>-->
-                <a href="assuntos.php?m=<?php echo MD5(2); ?>">
+                <a href="assuntos?m=<?php echo MD5(2); ?>">
                     <div class="card">
                         <div class="card-header">
                             <img src="img/image2.png" alt="">
@@ -118,7 +118,7 @@
                     </div>
                 </a>
 
-                <a href="assuntos.php?m=<?php echo MD5(3); ?>">
+                <a href="assuntos?m=<?php echo MD5(3); ?>">
                     <div class="card">
                         <div class="card-header">
                             <img src="img/image3.png" alt="">
@@ -138,7 +138,7 @@
                     </div>
                 </a>
 
-                <a href="assuntos.php?m=<?php echo MD5(4); ?>">
+                <a href="assuntos?m=<?php echo MD5(4); ?>">
                     <div class="card">
                         <div class="card-header">
                             <img src="img/image4.png" alt="">
@@ -158,7 +158,7 @@
                     </div>
                 </a>                
 
-                <a href="assuntos.php?m=<?php echo MD5(5); ?>">
+                <a href="assuntos?m=<?php echo MD5(5); ?>">
                     <div class="card">
                         <div class="card-header">
                             <img src="img/image5.png" alt="">
@@ -178,7 +178,7 @@
                     </div>
                 </a>                
 
-                <a href="assuntos.php?m=<?php echo MD5(6); ?>">
+                <a href="assuntos?m=<?php echo MD5(6); ?>">
                     <div class="card">
                         <div class="card-header">
                             <img src="img/image6.png" alt="">
@@ -198,7 +198,7 @@
                     </div>
                 </a>                
 
-                <a href="assuntos.php?m=<?php echo MD5(7); ?>">
+                <a href="assuntos?m=<?php echo MD5(7); ?>">
                     <div class="card">
                         <div class="card-header">
                             <img src="img/imagem1.png" alt="">
@@ -218,7 +218,7 @@
                     </div>
                 </a>                
 
-                <a href="assuntos.php?m=<?php echo MD5(8); ?>">
+                <a href="assuntos?m=<?php echo MD5(8); ?>">
                     <div class="card">
                         <div class="card-header">
                             <img src="img/imagem1.png" alt="">
@@ -238,7 +238,7 @@
                     </div>
                 </a>                
 
-                <a href="assuntos.php?m=<?php echo MD5(9); ?>">
+                <a href="assuntos?m=<?php echo MD5(9); ?>">
                     <div class="card">
                         <div class="card-header">
                             <img src="img/imagem1.png" alt="">
@@ -258,7 +258,7 @@
                     </div>
                 </a>                
 
-                <a href="assuntos.php?m=<?php echo MD5(10); ?>">
+                <a href="assuntos?m=<?php echo MD5(10); ?>">
                     <div class="card">
                         <div class="card-header">
                             <img src="img/imagem1.png" alt="">
@@ -278,7 +278,7 @@
                     </div>
                 </a>                
 
-                <a href="assuntos.php?m=<?php echo MD5(11); ?>">
+                <a href="assuntos?m=<?php echo MD5(11); ?>">
                     <div class="card">
                         <div class="card-header">
                             <img src="img/imagem1.png" alt="">
@@ -298,7 +298,7 @@
                     </div>
                 </a>                
 
-                <a href="assuntos.php?m=<?php echo MD5(12); ?>">
+                <a href="assuntos?m=<?php echo MD5(12); ?>">
                     <div class="card">
                         <div class="card-header">
                             <img src="img/imagem1.png" alt="">

@@ -57,11 +57,11 @@ if (mysqli_num_rows($result) > 0) {
                         
                         if($_SESSION['idTipoUsuario'] == 1){
                             $_SESSION['TipoUsuario'] = 'administrador';
-                            header('location:../index.php');
+                            header('location:../index');
 
                         }elseif($_SESSION['idTipoUsuario'] == 2){
                             $_SESSION['TipoUsuario'] = 'usuario';
-                            header('location:../index.php');
+                            header('location:../index');
 
                         }
                     }

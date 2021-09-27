@@ -34,8 +34,8 @@
                     <br>
                     <button>Enviar</button>
                     <br>
-                    <a href="cadastro.php">Novo? Crie uma conta agora!</a>
-                    <a href="esqueceu_senha.php">Esqueceu a senha?</a>
+                    <a href="cadastro">Novo? Crie uma conta agora!</a>
+                    <a href="esqueceu_senha">Esqueceu a senha?</a>
                 </form>
             </div>            
         </div>

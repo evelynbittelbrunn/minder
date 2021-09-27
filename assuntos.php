@@ -16,7 +16,7 @@
 <body>
     <div class="sidebar">
         <div class="logo-content">
-            <a href="index.php">
+            <a href="index">
                 <div class="logo">
                     <img src="img/logo-minder3.png" class="logo-img" alt="Minder Vestibulares">                                
                 </div>

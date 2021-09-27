@@ -14,7 +14,7 @@ $questaoAnterior     = consultaQuestaoAnterior($idAssunto, $idQuestao);
 
 //Verifica se a anterior questão desse assunto existe
 if($questaoAnterior > 0 ){
-    header('location: ../questao.php?q='.MD5($questaoAnterior).'&a='.$idAssunto);
+    header('location: ../questao?q='.MD5($questaoAnterior).'&a='.$idAssunto);
     exit(0);
 }
 

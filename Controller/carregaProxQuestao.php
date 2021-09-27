@@ -15,7 +15,7 @@ $proxQuestao         = proximaQuestao($idAssunto, $idQuestao);
 
 //Verifica se a próxima questão desse assunto existe
 if($proxQuestao > 0 ){
-    header('location: ../questao.php?q='.MD5($proxQuestao).'&a='.$idAssunto);
+    header('location: ../questao?q='.MD5($proxQuestao).'&a='.$idAssunto);
     exit(0);
 }
 

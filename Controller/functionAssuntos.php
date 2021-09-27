@@ -81,7 +81,7 @@ function montaListaAssuntos($idMateria){
     
         foreach ($array as $campo) {
             $lista .= 
-            '<a href="lista-questoes.php?m='.MD5($campo['idTipoMateria']).'&a='.MD5($campo['idTipoAssunto']).'">'
+            '<a href="lista-questoes?m='.MD5($campo['idTipoMateria']).'&a='.MD5($campo['idTipoAssunto']).'">'
                 .'<div class="card-caixa">'
                     .'<div class="card-assunto">'
                         .'<div class="content-assunto">'
