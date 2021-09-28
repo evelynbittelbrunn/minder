@@ -1,11 +1,11 @@
 <?php
-    include('Controller/functionAssuntos.php');
-    include('Controller/functionListaQuestoes.php');
-    include('Controller/functionMateria.php');
-	include('Controller/functionMenu.php');
-	include('Controller/functionNotificacoes.php');
-	include('Controller/functionPerfil.php');
-    include('Controller/functionQuestao.php');
+    include('functionAssuntos.php');
+    include('functionListaQuestoes.php');
+    include('functionMateria.php');
+	include('functionMenu.php');
+	include('functionNotificacoes.php');
+	include('functionPerfil.php');
+    include('functionQuestao.php');
 
 //Buscar o ID do código MD5
 function converteIdMd5($tabela,$campoID,$idMd5){
