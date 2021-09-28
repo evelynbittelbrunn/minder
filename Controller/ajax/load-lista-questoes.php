@@ -1,4 +1,7 @@
-<?php
+<?php 
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
 
 require '../conexaoPDO.php';
 
@@ -16,8 +19,10 @@ if($ano != 0){
 
 if($banca != 0){
     $queryBanca = " AND idBanca = ".$banca;
+    $_SESSION['idBancaFiltro']  = $banca;
 }else{
     $queryBanca = "";
+    $_SESSION['idBancaFiltro']  = "";
 }
 
 if($resp == 'true'){

@@ -53,7 +53,8 @@ function proximaQuestao($idAssunto, $idQuestao){
     $sql = "SELECT MIN(idQuestao) AS idQuestao "
                 ." FROM tb_Questao "
                 ." WHERE MD5(idTipoAssunto) = '".$idAssunto
-                ."' AND idQuestao > ".$idQuestao.";";
+                ."' AND idQuestao > ".$idQuestao
+                ." AND idBanca = ".$_SESSION['idBancaFiltro'].";";
     //var_dump($sql);
     //die();
 

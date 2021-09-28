@@ -73,13 +73,13 @@
                 <div class="filtros">
                     <div class="caixa-select">
                         <select class="filtro select" id="iAnoFiltro" name="" id="">
-                            <option value="">ANO</option>
+                            <option value="0">ANO</option>
                             <?php echo listaAnoSelect($_GET['m'],$_GET['a']); ?>
                         </select>                    
                     </div>  
                     <div class="caixa-select">
                         <select class="filtro select" id="iBancaFiltro" name="" id="">
-                            <option value="">BANCA</option>
+                            <option value="0">BANCA</option>
                             <?php echo listaBancaSelect($_GET['m'],$_GET['a']); ?>
                         </select>                    
                     </div>  
