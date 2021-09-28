@@ -33,6 +33,7 @@ if($resp == 'true'){
     $queryRespondidas = "";
 }
 
+
 $sql = $pdo->query("SELECT * FROM tb_Questao " 
                     ." WHERE MD5(idTipoMateria) = '".$materia."' "
                     ." AND MD5(idTipoAssunto) = '".$assunto."' "
