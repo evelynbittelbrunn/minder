@@ -50,13 +50,20 @@ function consultaidTipoMateria($idAssunto, $idQuestao){
 function proximaQuestao($idAssunto, $idQuestao){
     include('conexao.php');
 
+    if($_SESSION['idBancaFiltro'] != ""){        
+        $banca = " AND idBanca = ".$_SESSION['idBancaFiltro']." ";
+    }
+
+    if($_SESSION['AnoFiltro'] != ""){
+        $ano = " AND Ano = ".$_SESSION['AnoFiltro'];
+    }
+
     $sql = "SELECT MIN(idQuestao) AS idQuestao "
                 ." FROM tb_Questao "
-                ." WHERE MD5(idTipoAssunto) = '".$idAssunto
-                ."' AND idQuestao > ".$idQuestao
-                ." AND idBanca = ".$_SESSION['idBancaFiltro'].";";
-    //var_dump($sql);
-    //die();
+                ." WHERE MD5(idTipoAssunto) = '".$idAssunto."' "
+                .$banca
+                .$ano
+                ." AND idQuestao > ".$idQuestao.";";
 
     $result = mysqli_query($conn,$sql);    
     mysqli_close($conn);

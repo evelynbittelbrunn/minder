@@ -13,8 +13,10 @@ $resp      = $_GET['resp'];
 
 if($ano != 0){
     $queryAno = " AND Ano = ".$ano;
+    $_SESSION['AnoFiltro']  = $ano;
 }else{
     $queryAno = "";
+    $_SESSION['AnoFiltro']  = "";
 }
 
 if($banca != 0){
