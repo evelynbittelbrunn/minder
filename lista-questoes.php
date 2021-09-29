@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"> 
     <link href='css/style.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- ÍCONES -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>    
     <title>Minder | Vestibulares</title>
@@ -99,7 +100,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- JQUERY -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
@@ -129,6 +130,47 @@
 
         img.onclick = function() {
             drop.classList.toggle("drop-active");
+        }
+
+        // FUNÇÃO FAVORITO
+        function functionFavorito(tipo,id) {
+
+            var favorito    = document.getElementById('fav'+id);
+            var naoFavorito = document.getElementById('nao'+id);
+
+            if(tipo == 'S'){
+                favorito.setAttribute('hidden','hidden');
+                naoFavorito.removeAttribute('hidden');
+
+                $.ajax({
+                    url: "Controller/ajax/load-favorito.php?tipo=false&id="+id,
+                    success: function(result){
+                        
+                    },
+                    error: function(){
+                        $(".catalogo").html("OI");
+                        
+                    }            
+                });
+            }
+
+            if(tipo == 'N'){
+                favorito.removeAttribute('hidden');
+                naoFavorito.setAttribute('hidden','hidden');
+
+                $.ajax({                
+                    url: "Controller/ajax/load-favorito.php?tipo=true&id="+id,
+                    success: function(result){
+                        
+                    },
+                    error: function(){
+                        $(".catalogo").html("OI");
+                        
+                    }            
+                });
+            }
+
+        
         }
        
     </script>
