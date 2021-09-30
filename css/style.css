@@ -1069,10 +1069,22 @@ header{
     width: 100%;
     background-color: #171C21;
     padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    border-radius: 10px;    
     color: #C0BABB;
-    justify-content: space-between;
+    justify-content: space-between;    
+}
+
+.questao-row p{
+    height: 18px;
+    overflow: hidden; 
+    width: 95%;
+}
+
+.questao-container-caixa{
+    display: flex;
+    position: relative;
+    animation: row 1s;
+    margin-bottom: 10px;
     animation: row 1s;
 }
 
@@ -1086,14 +1098,27 @@ header{
     }
 }
 
-.questao-row p{
-    height: 18px;
-    overflow: hidden; 
-    width: 95%;
+.questao-container-caixa svg{
+    width: 18px;
+}
+
+.nao-favoritado{
+    color: #C0BABB;
+}
+
+.favoritado{
+    color: #A855FF; 
 }
 
 .questao-row svg{
     width: 18px;
+}
+
+.svg-favoritos{
+    height: 18px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
 }
 
 /*  ASSUNTOS  */
