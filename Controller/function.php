@@ -6,7 +6,8 @@
 	include('functionNotificacoes.php');
 	include('functionPerfil.php');
     include('functionQuestao.php');
-
+	include('functionGeraSenha.php');
+	
 //Buscar o ID do código MD5
 function converteIdMd5($tabela,$campoID,$idMd5){
 
