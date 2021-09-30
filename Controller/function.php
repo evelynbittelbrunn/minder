@@ -6,6 +6,7 @@
 	include('functionMenu.php');
 	include('functionNotificacoes.php');
 	include('functionPerfil.php');
+	include('functionPesquisa.php');
     include('functionQuestao.php');
 	include('functionGeraSenha.php');
 	

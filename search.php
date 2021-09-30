@@ -1,7 +1,7 @@
 <?php
 	session_start();
     include('Controller/function.php');
-    carregaPerfil($_SESSION['idUsuario']);
+    carregaPerfil($_SESSION['idUsuario']); 
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -31,7 +31,7 @@
             </div>            
         </div>
         <ul class="navegacao">
-            <?php echo montaMenu('favoritos'); ?>
+            <?php echo montaMenu(''); ?>
         </ul>
     </div>
     <header>
@@ -68,16 +68,11 @@
     <div class="home-content">
         <div class="questoes-container">
             <div class="cards-container-titulo">
-                <h3>Questões Favoritas</h3>
-                <p>Lista de questões que você amou!</p>
-            </div>
-            <div class="filtros-container">                
-                <a href="#" id="iFiltro">
-                    <div class="botao-filtro">FILTRAR</div>  
-                </a>                                  
+                <h3>Lista de questões</h3>
+                <p>Resultados para "<?php echo $_GET['b']; ?>":</p>
             </div>
             <div class="questoes-container-content">
-                <?php echo montaListaFavoritos($_SESSION['idUsuario']); ?>
+                <?php echo montaListaPesquisa($_GET['b']); ?>
             </div>
         </div>
     </div>
@@ -113,27 +108,47 @@
             drop.classList.toggle("drop-active");
         }
 
-        // FUNÇÃO DESFAVORITAR
-        function functionDesfavoritar(id) {
+        // FUNÇÃO FAVORITO
+        function functionFavorito(tipo,id) {
 
             var favorito    = document.getElementById('fav'+id);
+            var naoFavorito = document.getElementById('nao'+id);
 
-            $.ajax({                
-                url: "Controller/ajax/load-desfavoritar.php?id="+id,
-                success: function(result){
-                    $(".questoes-container-content").html(result);
-                    
-                },
-                error: function(){
-                    $(".catalogo").html("OI");
-                    
-                }            
-            });
+            if(tipo == 'S'){
+                favorito.setAttribute('hidden','hidden');
+                naoFavorito.removeAttribute('hidden');
 
+                $.ajax({
+                    url: "Controller/ajax/load-favorito.php?tipo=false&id="+id,
+                    success: function(result){
+                        
+                    },
+                    error: function(){
+                        $(".catalogo").html("OI");
+                        
+                    }            
+                });
+            }
+
+            if(tipo == 'N'){
+                favorito.removeAttribute('hidden');
+                naoFavorito.setAttribute('hidden','hidden');
+
+                $.ajax({                
+                    url: "Controller/ajax/load-favorito.php?tipo=true&id="+id,
+                    success: function(result){
+                        
+                    },
+                    error: function(){
+                        $(".catalogo").html("OI");
+                        
+                    }            
+                });
+            }
 
         
         }
-       
+
     </script>
 </body>
 </html>
