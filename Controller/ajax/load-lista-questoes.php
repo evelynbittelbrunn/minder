@@ -31,8 +31,10 @@ if($banca != 0){
 
 if($resp == 'true'){
     $queryRespondidas = " AND idQuestao NOT IN (SELECT idQuestao FROM tb_RespostaUsuario WHERE idUsuario = ".$_SESSION['idUsuario'].") ";
+    $_SESSION['questoesRespondidas']  = $resp;
 }else{
-    $queryRespondidas = "";
+    $queryRespondidas                 = "";
+    $_SESSION['questoesRespondidas']  = "";
 }
 
 
@@ -42,7 +44,7 @@ $sql = $pdo->query("SELECT * FROM tb_Questao "
                     .$queryAno
                     .$queryBanca
                     .$queryRespondidas
-                    ." ORDER BY Ano DESC;");
+                    ." ORDER BY idQuestao ASC;");
 
 if($sql->rowCount() > 0){
     foreach($sql->fetchAll() as $campo){
@@ -59,7 +61,7 @@ if($sql->rowCount() > 0){
 
         echo 
         '<div class="questao-container-caixa">'
-            .'<a href="questao?q='.MD5($campo['idQuestao']).'&a='.$idAssunto.'">'
+            .'<a href="questao?q='.MD5($campo['idQuestao']).'&a='.$assunto.'">'
                 .'<div class="questao-row">'
                     .'<p>'.$campo['Descricao'].'</p>'             
                 .'</div>'
