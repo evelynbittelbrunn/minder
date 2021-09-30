@@ -24,25 +24,15 @@
         <div class="conteudo">
             <h2>Recuperar Senha</h2>            
             <div class="conteudo-form">
-<<<<<<< Updated upstream
                 <form method="POST" action="Controller/enviaEmail.php" id="iFIndex" name="nFIndex">
                     <input type="text" id="iNewLogin" name="nNewLogin" placeholder="Email">
                     <br>
                     <button>Enviar</button>
                     <br>
-=======
-                <form method="POST" action="controller/enviaEmail.php" id="iFIndex" name="nFIndex">
-                    <input type="text" placeholder="E-mail" id="iNewLogin" name="nNewLogin" >
-                    <button>Enviar Email</button>
->>>>>>> Stashed changes
                     <a href="login" class="voltarLogin">Voltar</a>
                 </form>
             </div>            
         </div>
     </main>
 </body>
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 </html>

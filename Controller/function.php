@@ -9,11 +9,7 @@
 	include('functionPesquisa.php');
     include('functionQuestao.php');
 	include('functionGeraSenha.php');
-<<<<<<< Updated upstream
 	
-=======
-
->>>>>>> Stashed changes
 //Buscar o ID do código MD5
 function converteIdMd5($tabela,$campoID,$idMd5){
 
