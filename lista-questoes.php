@@ -1,7 +1,10 @@
 <?php
 	session_start();
     include('Controller/function.php');
-    carregaPerfil($_SESSION['idUsuario']);
+    carregaPerfil($_SESSION['idUsuario']); 
+    if (isset($_SESSION['AnoFiltro']) || isset($_SESSION['idBancaFiltro']) || isset($_SESSION['questoesRespondidas'])){
+        session_destroy();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

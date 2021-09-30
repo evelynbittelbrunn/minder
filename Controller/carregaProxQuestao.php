@@ -69,8 +69,6 @@ function proximaQuestao($idAssunto, $idQuestao){
                 .$ano
                 .$resp
                 ." AND idQuestao > ".$idQuestao.";";
-    //var_dump($sql);
-    //die();
 
     $result = mysqli_query($conn,$sql);    
     mysqli_close($conn);
