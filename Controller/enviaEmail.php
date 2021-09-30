@@ -1,6 +1,9 @@
 <?php
 
+<<<<<<< Updated upstream
 	$email = $_POST['nNewLogin'];
+=======
+>>>>>>> Stashed changes
 	include("conexao.php");
 	include("function.php");
     require_once('../src/PHPMailer.php');
@@ -11,13 +14,20 @@
 	use PHPMailer\PHPMailer\SMTP;
 	use PHPMailer\PHPMailer\Exception;
 
+<<<<<<< Updated upstream
 	$mail = new PHPMailer(true);
+=======
+	$email = $_POST['nNewLogin'];
+	$mail = new PHPMailer(true);
+	$cRet = "";
+>>>>>>> Stashed changes
 
 	$sql  =  "SELECT Email FROM tb_usuario AS EMAIL"
         ." WHERE Email = '".$email."'";
 
 	$result = mysqli_query($conn,$sql);
 
+<<<<<<< Updated upstream
 	if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
 		echo "Digite um email válido";
 		
@@ -64,4 +74,41 @@
 		}
 	
 	}
+=======
+	if(mysqli_num_rows($result) > 0){
+
+		try {
+
+			$novaSenha = geraSenha(10, true, true, true);
+
+			$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+			$mail->isSMTP();
+			$mail->Host = 'smtp.gmail.com';
+			$mail->SMTPAuth = true;
+			$mail->Username = 'mindersenha@gmail.com';
+			$mail->Password = '!M1nD3r$';
+			$mail->Port = 587;
+		
+			$mail->setFrom('mindersenha@gmail.com');
+			$mail->addAddress($email);
+		
+			$mail->isHTML(true);
+			$mail->Subject = 'Nova senha. Não responda';
+			$mail->Body = 'Segue sua nova senha é:'.$novaSenha;
+			$mail->AltBody = 'Envio de nova senha';
+		
+			if($mail->send()) {
+				header('location:'.$_SERVER['HTTP_REFERER']);
+				echo 'Email enviado com sucesso';
+			} else {
+				echo 'Falha no envio do E-mail';
+			}
+		} catch (Exception $e) {
+			echo "Erro ao enviar mensagem: {$mail->ErrorInfo}";
+		}
+	}else{
+		echo "Email inválido";
+	}
+
+>>>>>>> Stashed changes
 ?>

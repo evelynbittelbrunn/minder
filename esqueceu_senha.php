@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"> 
     <link href='css/style.css' rel='stylesheet'>
+<<<<<<< Updated upstream
     <link rel="shortcut icon" type="imagex/png" href="img/icone-page-minder.png">
+=======
+>>>>>>> Stashed changes
     <!-- ÍCONES -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>    
     <title>Minder | Vestibulares</title>
@@ -21,15 +24,25 @@
         <div class="conteudo">
             <h2>Recuperar Senha</h2>            
             <div class="conteudo-form">
+<<<<<<< Updated upstream
                 <form method="POST" action="Controller/enviaEmail.php" id="iFIndex" name="nFIndex">
                     <input type="text" id="iNewLogin" name="nNewLogin" placeholder="Email">
                     <br>
                     <button>Enviar</button>
                     <br>
+=======
+                <form method="POST" action="controller/enviaEmail.php" id="iFIndex" name="nFIndex">
+                    <input type="text" placeholder="E-mail" id="iNewLogin" name="nNewLogin" >
+                    <button>Enviar Email</button>
+>>>>>>> Stashed changes
                     <a href="login" class="voltarLogin">Voltar</a>
                 </form>
             </div>            
         </div>
     </main>
 </body>
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 </html>
