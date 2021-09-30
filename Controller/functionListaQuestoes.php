@@ -7,7 +7,7 @@ function listaAnoSelect($idMateria,$idAssunto){
     $sql = "SELECT DISTINCT Ano FROM tb_Questao "
             ." WHERE MD5(idTipoMateria) = '".$idMateria."' "
             ." AND MD5(idTipoAssunto) = '".$idAssunto."' "
-            ." ORDER BY Ano DESC;";
+            ." ORDER BY idQuestao ASC;";
 
     $result = mysqli_query($conn,$sql);
     mysqli_close($conn);
@@ -106,7 +106,7 @@ function montaListaQuestoes($idMateria,$idAssunto){
     $sql = "SELECT * FROM tb_Questao "
             ." WHERE MD5(idTipoMateria) = '".$idMateria."' "
             ." AND MD5(idTipoAssunto) = '".$idAssunto."' "
-            ." ORDER BY Ano DESC;";
+            ." ORDER BY idQuestao ASC;";
 
     $result = mysqli_query($conn,$sql);
     mysqli_close($conn);

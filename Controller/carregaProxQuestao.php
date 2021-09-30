@@ -58,12 +58,19 @@ function proximaQuestao($idAssunto, $idQuestao){
         $ano = " AND Ano = ".$_SESSION['AnoFiltro'];
     }
 
+    if($_SESSION['questoesRespondidas'] != ""){
+        $resp = " AND idQuestao NOT IN (SELECT idQuestao FROM tb_RespostaUsuario WHERE idUsuario = ".$_SESSION['idUsuario'].") ";
+    }
+
     $sql = "SELECT MIN(idQuestao) AS idQuestao "
                 ." FROM tb_Questao "
                 ." WHERE MD5(idTipoAssunto) = '".$idAssunto."' "
                 .$banca
                 .$ano
+                .$resp
                 ." AND idQuestao > ".$idQuestao.";";
+    //var_dump($sql);
+    //die();
 
     $result = mysqli_query($conn,$sql);    
     mysqli_close($conn);

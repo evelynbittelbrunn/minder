@@ -9,6 +9,10 @@ function montaMenu($navegacao){
     $menuNotificacoes = '';
     $menuQuestoes     = '';
 
+    if (isset($_SESSION['logado'])) {
+		$_SESSION['idTipoUsuario'] = 2;
+    }
+
     switch ($navegacao) {
         case 'index':
             $menuBanco = 'selected';
