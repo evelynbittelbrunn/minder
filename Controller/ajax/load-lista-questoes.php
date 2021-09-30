@@ -79,7 +79,7 @@ if($sql->rowCount() > 0){
     echo '
 
     <div class="mensagem-resultado-filtro">
-        <h2>Que pena, sua filtragem não obteve resultados... <br> Dica: tente usar menos regras :D</h2>
+        <h2>Que pena, sua filtragem não obteve resultados... <br> Dica: tente usar menos regras ;)</h2>
     </div>';
 }
 

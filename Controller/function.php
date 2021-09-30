@@ -1,5 +1,6 @@
 <?php
     include('functionAssuntos.php');
+    include('functionFavorito.php');
     include('functionListaQuestoes.php');
     include('functionMateria.php');
 	include('functionMenu.php');
