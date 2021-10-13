@@ -2,6 +2,10 @@
     session_start();
     include('Controller/function.php');
     $_SESSION['logado'] = 0;
+    $_SESSION['msg-login'];
+    if ($_SERVER['HTTP_REFERER'] != 'http://localhost/C%C3%B3digos/minder/login'){
+        $_SESSION['msg-login'] = '';
+    };
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -35,6 +39,7 @@
                     <br>
                     <button>Enviar</button>
                     <br>
+                    <p><?php echo $_SESSION['msg-login']; ?></p>
                     <a href="cadastro">Novo? Crie uma conta agora!</a>
                     <a href="esqueceu_senha">Esqueceu a senha?</a>
                 </form>

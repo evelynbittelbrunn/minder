@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    include('Controller/function.php');
+    $_SESSION['msg-senha'];
+
+    if ($_SERVER['HTTP_REFERER'] != 'http://localhost/C%C3%B3digos/minder/esqueceu_senha'){
+        $_SESSION['msg-senha'] = '';
+    };
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,10 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"> 
     <link href='css/style.css' rel='stylesheet'>
-<<<<<<< Updated upstream
     <link rel="shortcut icon" type="imagex/png" href="img/icone-page-minder.png">
-=======
->>>>>>> Stashed changes
     <!-- ÍCONES -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>    
     <title>Minder | Vestibulares</title>
@@ -29,6 +36,11 @@
                     <br>
                     <button>Enviar</button>
                     <br>
+                    <p>
+                        <?php 
+                            echo $_SESSION['msg-senha']; 
+                        ?>
+                    </p>
                     <a href="login" class="voltarLogin">Voltar</a>
                 </form>
             </div>            

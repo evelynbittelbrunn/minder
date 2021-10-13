@@ -9,7 +9,8 @@ $login = $_POST['nLogin'];
 $senha = stripcslashes($_POST['nPass']);
 
 if(!filter_var($login, FILTER_VALIDATE_EMAIL)){
-    echo "Digite um email válido";
+    $_SESSION['msg-login'] = "Digite um email válido";
+    header('location:'.$_SERVER['HTTP_REFERER']);
     
 }else{
     $_SESSION['login']     = $login;
@@ -69,16 +70,19 @@ if(!filter_var($login, FILTER_VALIDATE_EMAIL)){
 
                             }
                         }else{
-                            echo "Usuário inativo";
+                            $_SESSION['msg-login'] = "Usuário bloqueado";
+                            header('location:'.$_SERVER['HTTP_REFERER']);
                         }
                     }
                 }else{
-                    echo "Dados inválidos, tente novamente";
+                    $_SESSION['msg-login'] = "Dados inválidos, tente novamente";
+                    header('location:'.$_SERVER['HTTP_REFERER']);
                 }
             }
         }
     }else{
-        echo "Email não cadastrado";
+        $_SESSION['msg-login'] = "Email não cadastrado";
+        header('location:'.$_SERVER['HTTP_REFERER']);
     }
 }
 

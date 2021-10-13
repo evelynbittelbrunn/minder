@@ -1,4 +1,8 @@
 <?php
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+	$_SESSION['msg-senha'] = '';
 
 	$email = $_POST['nNewLogin'];
 	include("conexao.php");
@@ -19,7 +23,8 @@
 	$result = mysqli_query($conn,$sql);
 
 	if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-		echo "Digite um email válido";
+		$_SESSION['msg-senha'] = "Digite um email válido";
+		header('location:'.$_SERVER['HTTP_REFERER']);
 		
 	}else{
 		if(mysqli_num_rows($result) > 0){
@@ -51,16 +56,18 @@
 				$result = mysqli_query($conn,$sql);
 	
 				if($mail->send()) {
+					$_SESSION['msg-senha'] = 'Email enviado com sucesso';
 					header('location:'.$_SERVER['HTTP_REFERER']);
-					echo 'Email enviado com sucesso';
 				} else {
-					echo 'Falha no envio do E-mail';
+					$_SESSION['msg-senha'] = 'Falha no envio do E-mail';
+					header('location:'.$_SERVER['HTTP_REFERER']);
 				}
 			} catch (Exception $e) {
 				echo "Erro ao enviar mensagem: {$mail->ErrorInfo}";
 			}
 		}else{
-			echo "Email não cadastrado";
+			$_SESSION['msg-senha'] = "Email não cadastrado";
+			header('location:'.$_SERVER['HTTP_REFERER']);
 		}
 	
 	}

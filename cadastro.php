@@ -1,3 +1,13 @@
+<?php 
+    session_start();
+    include('Controller/function.php');
+    $_SESSION['msg-salva'];
+
+    if ($_SERVER['HTTP_REFERER'] != 'http://localhost/C%C3%B3digos/minder/cadastro'){
+        $_SESSION['msg-salva'] = '';
+    };
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -26,6 +36,8 @@
                     <input type="text" placeholder="E-mail" id="iNewLogin"name="nNewLogin">
                     <input type="password" placeholder="Senha" id="iNewPass" name="nNewPass">
                     <button>Cadastrar</button>
+                    <p><?php echo $_SESSION['msg-salva']; ?></p>
+                    <a href="login" class="voltarLogin">Entrar</a>
                 </form>
             </div>            
         </div>
