@@ -1,9 +1,10 @@
 <?php
     session_start();
     include('Controller/function.php');
-    $_SESSION['msg-senha'];
-
-    if ($_SERVER['HTTP_REFERER'] != 'http://localhost/C%C3%B3digos/minder/esqueceu_senha'){
+    if(!isset($_SERVER['HTTP_REFERER'])){
+        $_SERVER['HTTP_REFERER'] = '';
+    }
+    if (!isset($_SESSION['msg-senha']) || $_SERVER['HTTP_REFERER'] != 'http://localhost/C%C3%B3digos/minder/esqueceu_senha'){
         $_SESSION['msg-senha'] = '';
     };
 ?>

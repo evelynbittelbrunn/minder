@@ -59,7 +59,7 @@
                         <?php echo montaListaNotificacoes($_SESSION['idUsuario']); ?>
                     </div>                    
                 </div>
-                <h5>Configurações</h5>
+                <a href='troca_senha'><h5>Configurações</h5></a>
             </div>
         </div>    
     </header>

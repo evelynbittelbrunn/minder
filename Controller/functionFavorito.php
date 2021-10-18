@@ -27,7 +27,7 @@ function montaListaFavoritos($idUsuario){
 
             $lista .= 
             '<div class="questao-container-caixa">'
-                .'<a href="questao?q='.MD5($campo['idQuestao']).'&a='.$idAssunto.'">'
+                .'<a href="questao?q='.MD5($campo['idQuestao']).'">'
                     .'<div class="questao-row">'
                         .'<p>'.$campo['Descricao'].'</p>'             
                     .'</div>'

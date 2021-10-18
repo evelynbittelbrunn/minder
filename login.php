@@ -2,10 +2,12 @@
     session_start();
     include('Controller/function.php');
     $_SESSION['logado'] = 0;
-    $_SESSION['msg-login'];
-    if ($_SERVER['HTTP_REFERER'] != 'http://localhost/C%C3%B3digos/minder/login'){
+    if(!isset($_SERVER['HTTP_REFERER'])){
+        $_SERVER['HTTP_REFERER'] = '';
+    }
+    if(!isset($_SESSION['msg-login']) || $_SERVER['HTTP_REFERER'] != 'http://localhost/C%C3%B3digos/minder/login'){
         $_SESSION['msg-login'] = '';
-    };
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -35,7 +37,7 @@
                     <input type="text" id="iLogin" name="nLogin">
                     <br>
                     Senha:
-                    <input type="text" id="iPass" name="nPass">
+                    <input type="password" id="iPass" name="nPass">
                     <br>
                     <button>Enviar</button>
                     <br>

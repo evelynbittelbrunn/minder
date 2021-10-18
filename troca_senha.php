@@ -4,8 +4,8 @@
     if(!isset($_SERVER['HTTP_REFERER'])){
         $_SERVER['HTTP_REFERER'] = '';
     }
-    if (!isset($_SESSION['msg-salva']) || $_SERVER['HTTP_REFERER'] != 'http://localhost/C%C3%B3digos/minder/cadastro'){
-        $_SESSION['msg-salva'] = '';
+    if (!isset($_SESSION['msg-troca']) || $_SERVER['HTTP_REFERER'] != 'http://localhost/C%C3%B3digos/minder/troca_senha'){
+        $_SESSION['msg-troca'] = '';
     };
 ?>
 
@@ -30,14 +30,14 @@
             <img src="img/estatua.png" alt="Minder">
         </div>
         <div class="conteudo">
-            <h2>Junte-se a nós!</h2>            
+            <h2>Troca de senha</h2>            
             <div class="conteudo-form">
-                <form method="POST" action="controller/salvaLogin.php" id="iFIndex" name="nFIndex">
-                    <input type="text" placeholder="Nome completo" id="iNewNome" name="nNewNome">
-                    <input type="text" placeholder="E-mail" id="iNewLogin"name="nNewLogin">
-                    <input type="password" placeholder="Senha" id="iNewPass" name="nNewPass">
-                    <button>Cadastrar</button>
-                    <p><?php echo $_SESSION['msg-salva']; ?></p>
+                <form method="POST" action="controller/trocaSenha.php" id="iFIndex" name="nFIndex">
+                    <input type="password" placeholder="Senha antiga" id="iOldPass" name="nOldPass">
+                    <input type="password" placeholder="Nova senha" id="iNewPass"name="nNewPass">
+                    <input type="password" placeholder="Conirmar senha" id="iPassConf" name="nPassConf">
+                    <button>Trocar senha</button>
+                    <p><?php echo $_SESSION['msg-troca']; ?></p>
                     <a href="login" class="voltarLogin">Entrar</a>
                 </form>
             </div>            
