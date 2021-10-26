@@ -20,8 +20,13 @@ function montaQuestao($idQuestao){
     
         foreach ($array as $campo) {
             $lista .= 
-            '<div class="question-text">'.$campo['Descricao'].'</div>'
-            .'<div>'
+            '<div class="question-text">'.$campo['Descricao'].'</div>';
+            if($campo['ArqImagem'] != NULL){
+                $lista .=
+                '<img src="'.$campo['ArqImagem'].'">';
+            }
+            $lista .=
+            '<div>'
                 .'<div style="color: #C0BABB;">'
                     .'<p style="padding: 6px;">Selecione a alternativa correta: </p>'
                     .'<input type="radio" name="certa" value="A" id="radioA">'

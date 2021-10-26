@@ -3,7 +3,7 @@
 function carregaPerfil($idUsuario){
 	$sql = "";
 	$idTipo = $_SESSION['idTipoUsuario'];
-
+	
 	switch ($idTipo) {
 
 		case 1:

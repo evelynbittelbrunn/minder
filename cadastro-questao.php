@@ -13,6 +13,7 @@
     <link rel="shortcut icon" type="imagex/png" href="img/icone-page-minder.png">
     <!-- ÍCONES -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Minder | Vestibulares</title>
 </head>
 <body>
@@ -28,7 +29,7 @@
             </div>            
         </div>
         <ul class="navegacao">
-            <?php echo montaMenu('index'); ?>
+            <?php echo montaMenu('cadastro-questao'); ?>
         </ul>
     </div>
     <header>
@@ -62,39 +63,64 @@
             </div>
         </div>    
     </header>
-    <div class="home-content">
+    <div class="home-content" style="color: #ffffff;">
         <div class="system-content">
             <div class="system-title">
                 <h3>Sistema</h3>
                 <p>Adicione, edite, exclua aqui!</p>
             </div>
-            <form method="POST" action="Controller/cadastro-questao.php" enctype="multipart/form-data">            
+            <form method="POST" action="Controller/salvaQuestao.php" enctype="multipart/form-data">            
                 <input type="text" name="nID" visible="false" value="0" hidden>
 
-                <label for="iDescricao">Descricao da questão: </label>
-                <input type="text" id="iDescricao" name="nDescricao"><br>
+                <label for="iDescricao">Descrição da questão: </label>
+                <textarea id="iDescricao" name="nDescricao" rows="4" cols="50"></textarea></br>
+
+                <div>
+                <label>Imagem:</label> 
+                <input type="file" name="nImagem">
+                </div></br>
+
+                <label for="iAlternativaA">Alternativa A: </label>
+                <input type="text" id="iAlternativaA" name="nAlternativaA"></br>
+
+                <label for="iAlternativaB">Alternativa B: </label>
+                <input type="text" id="iAlternativaB" name="nAlternativaB"></br>
+
+                <label for="iAlternativaC">Alternativa C: </label>
+                <input type="text" id="iAlternativaC" name="nAlternativaC"></br>
+
+                <label for="iAlternativaD">Alternativa D: </label>
+                <input type="text" id="iAlternativaD" name="nAlternativaD"></br>
+
+                <label for="iAlternativaE">Alternativa E: </label>
+                <input type="text" id="iAlternativaE" name="nAlternativaE"></br>
+
+                <label for="iResposta">Resposta: </label>
+                <select name="nResposta" id="iResposta" required="true">
+                    <option value="">Selecione</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                </select></br>
 
                 <label for="iMateria">Matéria: </label>
-                <select name="nMateria" id="iMateria">
-                    <option value="1">Biologia</option>
-                    <option value="2">Educação Física</option>
-                    <option value="3">Espanhol</option>
-                    <option value="4">Filosofia</option>
-                    <option value="5">Física</option>
-                    <option value="6">Geografia</option>
-                    <option value="7">História</option>
-                    <option value="8">Inglês</option>
-                    <option value="9">Matemática</option>
-                    <option value="10">Português</option>
-                    <option value="11">Química</option>
-                    <option value="12">Sociologia</option>
-                </select><br>    
+                <select name="nMateria" id="iMateria" required="true">
+                    <option value="">Selecione</option>
+                    <?php echo consultaMaterias(); ?>
+                </select></br>
 
                 <label for="iAssunto">Assunto: </label>
-                <input type="text" id="iAssunto" name="nAssunto"><br>
+                <select name="nAssunto" id="iAssunto" required="true">
+                    <option value="">Selecione</option>
+                </select></br>
 
                 <label for="iBanca">Banca: </label>
-                <input type="text" id="iBanca" name="nBanca"><br>
+                <select name="nBanca" id="iBanca" required="true">
+                    <option value="">Selecione</option>
+                    <?php echo consultaBancas(); ?>
+                </select></br>
 
                 <label for="iTipoQuestao">Tipo da questão: </label>
                 <select name="nTipoQuestao" id="iTipoQuestao">
@@ -103,11 +129,30 @@
                     <option value="3">Somatória</option>
                 </select><br>
 
+                <div></div>
                 <label for="iAno">Ano: </label>
-                <input type="number" id="iAno" name="nAno">
-
+                <input type="number" id="iAno" name="nAno"></br>
                 <input type="submit">
             </form>
         </div>
     </div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script>
+$(document).ready(function(){
+    $('#iMateria').on('change', function(){
+        var materia = $(this).val();
+        if(materia){
+            $.ajax({
+                type:'POST',
+                url:"Controller/carregaAssuntosMateria.php",
+                data:'idTipoMateria='+materia,
+                success: function(html) {
+                    $('#iAssunto').html(html);
+                }
+            });
+        }
+    });
+});
+</script>
 </body>
+</html>
