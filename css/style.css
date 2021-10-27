@@ -1140,6 +1140,57 @@ header{
     top: 20px;
 }
 
+.svg-edit{
+    height: 18px;
+    position: absolute;
+    right: 45px;
+    top: 20px;
+}
+
+/* MODAL */
+
+.modal-container{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 20;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/* SÓ MOSTRAR QUANDO AS DUAS CLASSES ESTIVEREM JUNTAS */
+.modal-container.mostrar{
+    display: flex;
+}
+
+.modal{
+    /*width: 90%;*/
+    width: 1.191,566px;
+    background-color: white;
+    position: relative;
+    padding: 10px;
+}
+
+@keyframes modal {
+    from{
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+
+    to{
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.mostrar .modal{
+    animation: modal 1s;
+}
+
 /*  ASSUNTOS  */
 
 
@@ -1175,3 +1226,18 @@ header{
     /*border: 1px solid #4516A9;*/
 }
 
+/* QUESTAO */
+
+.label-questao{
+    display: block;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    border: 1px solid #C0BABB;
+}
+
+.selecionado{
+    background-color: #4516A9;
+    border: 1px solid #4516A9;
+}

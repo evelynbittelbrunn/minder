@@ -112,6 +112,9 @@
         </div>
     </div>
 
+    <div id="modal-produto" class="modal-container">
+    </div>
+
     <!-- JQUERY -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
@@ -186,6 +189,33 @@
                 alert("Faça login para favoritar questões!")
             }
 
+        }
+
+        // MODAL
+
+        function iniciaModal(modalID,idQuestao) {
+
+            const modal = document.getElementById(modalID);
+
+            $.ajax({
+                
+                url: "Controller/ajax/load-modal.php?id="+idQuestao,
+                success: function(result){
+                    $(".modal-container").html(result);
+                    
+                },
+                error: function(){
+                    $(".modal-container").html("OI");
+                    
+                }            
+            });
+
+            modal.classList.add('mostrar');
+            modal.addEventListener('click', (e) => {
+                if(e.target.id == modalID || e.target.className == 'fechar'){
+                    modal.classList.remove('mostrar');
+                }
+            })
         }
        
     </script>
