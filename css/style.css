@@ -1169,10 +1169,12 @@ header{
 
 .modal{
     /*width: 90%;*/
-    width: 1.191,566px;
+    width: 70%;
+    height: 80vh;
     background-color: #1D2329;
     position: relative;
     padding: 10px;
+    overflow: auto;
 }
 
 @keyframes modal {
@@ -1196,8 +1198,10 @@ header{
     width: 90%;
 }
 
-.container-modal-input{
-    
+.container-modal-select{
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
 }
 
 .container-modal label{

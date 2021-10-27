@@ -63,14 +63,21 @@
                 <h5>Configurações</h5>
             </div>
         </div>      
-    </header>
+    </header>         
     <div class="home-content">
-        <div class="questoes-container">
+        <div class="cards-container">
             <div class="cards-container-titulo">
                 <h3>Lista de assuntos</h3>
-                <p>Lista das questões cadastradas</p>
+                <p>Assuntos cadastrados</p>
             </div>
-            <div class="questoes-container-content">
+            <div class="filtros-container">
+                <?php if($_SESSION['idTipoUsuario'] == 1){ ?>     
+                <a href="cadastro-questao" id="iCadastro">
+                    <div class="botao-filtro">CADASTRAR</div>  
+                </a>       
+                <?php } ?>                   
+            </div>
+            <div class="cards-container-row">
                 <?php echo listaAssuntosCadastrados(); ?>
             </div>
         </div>

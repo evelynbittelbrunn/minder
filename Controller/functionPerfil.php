@@ -2,7 +2,12 @@
 //Carrega as informações do perfil do usuário
 function carregaPerfil($idUsuario){
 	$sql = "";
-	$idTipo = $_SESSION['idTipoUsuario'];
+
+	if(isset($_SESSION['idTipoUsuario'])){
+		$idTipo = $_SESSION['idTipoUsuario'];
+	}else{
+		$idTipo = 2;
+	}
 	
 	if($idUsuario != ""){
 		switch ($idTipo) {

@@ -37,63 +37,89 @@ if($sql->rowCount() > 0){
                     .'</div>'
                     
 
+                    
+                    .'<div class="container-modal">'
+                        .'<label>Imagem:</label>' 
+                        .'<input type="file" name="nImagem">'
+                    .'</div>'
+
+                    .'<div class="container-modal">'
+                        .'<label for="iAlternativaA">Alternativa A: </label>'
+                        .'<input type="text" id="iAlternativaA" name="nAlternativaA" value="'.$value['AlternativaA'].'" class="input-modal">'
+                    .'</div>'
+                    
+                    .'<div class="container-modal">'
+                        .'<label for="iAlternativaB">Alternativa B: </label>'
+                        .'<input type="text" id="iAlternativaB" name="nAlternativaB" value="'.$value['AlternativaB'].'" class="input-modal">'
+                    .'</div>'
+
+                    .'<div class="container-modal">'
+                        .'<label for="iAlternativaC">Alternativa C: </label>'
+                        .'<input type="text" id="iAlternativaC" name="nAlternativaC" value="'.$value['AlternativaC'].'" class="input-modal">'
+                    .'</div>'
+
+                    .'<div class="container-modal">'
+                        .'<label for="iAlternativaD">Alternativa D: </label>'
+                        .'<input type="text" id="iAlternativaD" name="nAlternativaD" value="'.$value['AlternativaD'].'" class="input-modal">'
+                    .'</div>'
+
+                    .'<div class="container-modal">'
+                        .'<label for="iAlternativaE">Alternativa E: </label>'
+                        .'<input type="text" id="iAlternativaE" name="nAlternativaE" value="'.$value['AlternativaE'].'" class="input-modal">'
+                    .'</div>'
+
+                    .'<div class="container-modal-select">'
+                        .'<div>'
+                            .'<label for="iResposta">Resposta: </label>'
+                            .'<select name="nResposta" id="iResposta" required="true">'
+                                .'<option value="'.$value['Resposta'].'">'.$value['Resposta'].'</option>'
+                                .'<option value="A">A</option>'
+                                .'<option value="B">B</option>'
+                                .'<option value="C">C</option>'
+                                .'<option value="D">D</option>'
+                                .'<option value="E">E</option>'
+                            .'</select>'
+                        .'</div>'
+                        
+                        .'<div>'
+                            .'<label for="iMateria">Matéria: </label>'
+                            .'<select name="nMateria" id="iMateria" required="true">'
+                                .'<option value="'.$value['idTipoMateria'].'">'.$value['Materia'].'</option>'
+                                .consultaMaterias($value['idTipoMateria'])
+                            .'</select>'
+                        .'</div>'                        
+
+                        .'<div>'
+                            .'<label for="iAssunto">Assunto: </label>'
+                            .'<select name="nAssunto" id="iAssunto" required="true">'
+                                .'<option value="'.$value['idTipoAssunto'].'">'.$value['Assunto'].'</option>'
+                                .consultaAssuntos($value['idTipoAssunto'])
+                            .'</select>'
+                        .'</div>'                        
+
+                        .'<div>'
+                            .'<label for="iBanca">Banca: </label>'
+                            .'<select name="nBanca" id="iBanca" required="true">'
+                                .'<option value="'.$value['idBanca'].'">'.$value['Banca'].'</option>'
+                                .consultaBancas($value['idBanca'])
+                            .'</select>'
+                        .'</div>'                        
+
+                        .'<div>'
+                            .'<label for="iTipoQuestao">Tipo da questão: </label>'
+                            .'<select name="nTipoQuestao" id="iTipoQuestao">'
+                                .'<option value="'.$value['idTipoQuestao'].'">'.$value['TipoQuestao'].'</option>'
+                                .consultaTipoQuestoes($value['idTipoQuestao'])
+                            .'</select>'
+                        .'</div>'                        
+                    .'</div>'
+                    
+
                     .'<div>'
-                    .'<label>Imagem:</label>' 
-                    .'<input type="file" name="nImagem">'
-                    .'</div></br>'
-
-                    .'<label for="iAlternativaA">Alternativa A: </label>'
-                    .'<input type="text" id="iAlternativaA" name="nAlternativaA" value="'.$value['AlternativaA'].'" class="input-modal"></br>'
-
-                    .'<label for="iAlternativaB">Alternativa B: </label>'
-                    .'<input type="text" id="iAlternativaB" name="nAlternativaB" value="'.$value['AlternativaB'].'" class="input-modal"></br>'
-
-                    .'<label for="iAlternativaC">Alternativa C: </label>'
-                    .'<input type="text" id="iAlternativaC" name="nAlternativaC" value="'.$value['AlternativaC'].'" class="input-modal"></br>'
-
-                    .'<label for="iAlternativaD">Alternativa D: </label>'
-                    .'<input type="text" id="iAlternativaD" name="nAlternativaD" value="'.$value['AlternativaD'].'" class="input-modal"></br>'
-
-                    .'<label for="iAlternativaE">Alternativa E: </label>'
-                    .'<input type="text" id="iAlternativaE" name="nAlternativaE" value="'.$value['AlternativaE'].'" class="input-modal"></br>'
-
-                    .'<label for="iResposta">Resposta: </label>'
-                   .' <select name="nResposta" id="iResposta" required="true">'
-                        .'<option value="'.$value['Resposta'].'">'.$value['Resposta'].'</option>'
-                        .'<option value="A">A</option>'
-                        .'<option value="B">B</option>'
-                        .'<option value="C">C</option>'
-                        .'<option value="D">D</option>'
-                        .'<option value="E">E</option>'
-                    .'</select></br>'
-
-                    .'<label for="iMateria">Matéria: </label>'
-                    .'<select name="nMateria" id="iMateria" required="true">'
-                        .'<option value="'.$value['idTipoMateria'].'">'.$value['Materia'].'</option>'
-                        .consultaMaterias($value['idTipoMateria'])
-                    .'</select></br>'
-
-                    .'<label for="iAssunto">Assunto: </label>'
-                    .'<select name="nAssunto" id="iAssunto" required="true">'
-                        .'<option value="'.$value['idTipoAssunto'].'">'.$value['Assunto'].'</option>'
-                        .consultaAssuntos($value['idTipoAssunto'])
-                    .'</select></br>'
-
-                    .'<label for="iBanca">Banca: </label>'
-                    .'<select name="nBanca" id="iBanca" required="true">'
-                        .'<option value="'.$value['idBanca'].'">'.$value['Banca'].'</option>'
-                        .consultaBancas($value['idBanca'])
-                    .'</select></br>'
-
-                    .'<label for="iTipoQuestao">Tipo da questão: </label>'
-                    .'<select name="nTipoQuestao" id="iTipoQuestao">'
-                        .'<option value="'.$value['idTipoQuestao'].'">'.$value['TipoQuestao'].'</option>'
-                        .consultaTipoQuestoes($value['idTipoQuestao'])
-                    .'</select><br>'
-
-                    .'<div></div>'
-                    .'<label for="iAno">Ano: </label>'
-                    .'<input type="number" id="iAno" name="nAno" value="'.$value['Ano'].'"></br>'
+                        .'<label for="iAno">Ano: </label>'
+                        .'<input type="number" id="iAno" name="nAno" value="'.$value['Ano'].'">'
+                    .'</div>'
+                    
                     .'<input type="submit">'
                 .'</form>'
             .'</div>'      
