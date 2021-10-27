@@ -78,11 +78,6 @@
                 <h3>Questões Favoritas</h3>
                 <p>Lista de questões que você amou!</p>
             </div>
-            <div class="filtros-container">                
-                <a href="#" id="iFiltro">
-                    <div class="botao-filtro">FILTRAR</div>  
-                </a>                                  
-            </div>
             <div class="questoes-container-content">
                 <?php echo montaListaFavoritos($_SESSION['idUsuario']); ?>
             </div>
