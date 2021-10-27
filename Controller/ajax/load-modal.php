@@ -69,7 +69,7 @@ if($sql->rowCount() > 0){
                     .'</div>'
 
                     .'<div class="container-modal-select">'
-                        .'<div>'
+                        .'<div class="content-modal-select">'
                             .'<label for="iResposta">Resposta: </label>'
                             .'<select name="nResposta" id="iResposta" required="true">'
                                 .'<option value="'.$value['Resposta'].'">'.$value['Resposta'].'</option>'
