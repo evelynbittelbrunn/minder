@@ -1,6 +1,13 @@
 <?php
 	session_start();
     include('Controller/function.php');
+    if ($_SESSION['logado'] == 0 || $_SESSION['idTipoUsuario'] != 1) {
+        header('location: ../minder/login.php');
+    }
+    if(!isset($_SESSION['idNotificacao'])){
+        $_SESSION['idNotificacao'] = '';
+    }
+    carregaPerfil($_SESSION['idUsuario']);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -60,7 +67,7 @@
                         <?php echo montaListaNotificacoes($_SESSION['idUsuario']); ?>
                     </div>                    
                 </div>
-                <h5>Configurações</h5>
+                <h5><a href="troca_senha">Configurações</a></h5>
             </div>
         </div>      
     </header>         

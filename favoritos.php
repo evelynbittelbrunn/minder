@@ -64,7 +64,7 @@
                             .'        <?php echo montaListaNotificacoes($_SESSION["idUsuario"]); ?>'
                             .'    </div>'                  
                             .'</div>'
-                            .'<h5>Configurações</h5>';
+                            .'<h5><a href="troca_senha">Configurações</a></h5>';
                     }else{
                         echo "<h5> Faça login para receber notificações! </h5>";
                     }
@@ -77,11 +77,6 @@
             <div class="cards-container-titulo">
                 <h3>Questões Favoritas</h3>
                 <p>Lista de questões que você amou!</p>
-            </div>
-            <div class="filtros-container">                
-                <a href="#" id="iFiltro">
-                    <div class="botao-filtro">FILTRAR</div>  
-                </a>                                  
             </div>
             <div class="questoes-container-content">
                 <?php echo montaListaFavoritos($_SESSION['idUsuario']); ?>
