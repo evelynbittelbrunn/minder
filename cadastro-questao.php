@@ -1,6 +1,7 @@
 <?php
 	session_start();
     include('Controller/function.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -138,6 +139,7 @@
     </div>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script>
+    
 $(document).ready(function(){
     $('#iMateria').on('change', function(){
         var materia = $(this).val();
@@ -153,6 +155,30 @@ $(document).ready(function(){
         }
     });
 });
+
+    let btn = document.querySelector("#btn-menu");
+    let sidebar = document.querySelector(".sidebar");
+
+    btn.onclick = function() {
+        sidebar.classList.toggle("active");
+    }
+
+    // MENU RESPONSIVE
+    let btn2 = document.querySelector("#btn-menu-2");
+    let sidebar2 = document.querySelector(".sidebar");
+
+    btn2.onclick = function() {
+        sidebar2.classList.toggle("active");
+    }
+
+    /// DROP DOWN
+    let img  = document.querySelector("#btn-drop");
+    let drop = document.querySelector("#drop-down");
+
+    img.onclick = function() {
+        drop.classList.toggle("drop-active");
+    }
+    
 </script>
 </body>
 </html>
