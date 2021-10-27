@@ -55,13 +55,19 @@
                 <div class="perfil-content">
                     <h4><?php echo $_SESSION['NomeUsuario']; ?></h4>
                 </div>
-                <div id="notificacoes-container" class="notificacoes-container">
-                    <h5>Notificações</h5>
-                    <div class="notificacoes-content">
-                        <?php echo montaListaNotificacoes($_SESSION['idUsuario']); ?>
-                    </div>                    
-                </div>
-                <h5>Configurações</h5>
+                <?php 
+                    if($_SESSION['idUsuario'] != '0'){
+                        echo '<div id="notificacoes-container" class="notificacoes-container">'
+                            .'    <h5>Notificações</h5>'
+                            .'    <div class="notificacoes-content">'
+                            .'        <?php echo montaListaNotificacoes($_SESSION["idUsuario"]); ?>'
+                            .'    </div>'                  
+                            .'</div>'
+                            .'<h5>Configurações</h5>';
+                    }else{
+                        echo "<h5> Faça login para receber notificações! </h5>";
+                    }
+                ?>
             </div>
         </div>      
     </header>
