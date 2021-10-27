@@ -8,6 +8,7 @@ function montaMenu($navegacao){
     $menuFavoritos    = '';
     $menuNotificacoes = '';
     $menuQuestoes     = '';
+    $menuAssuntos     = '';
 
     /*if (isset($_SESSION['logado'])) {
 		$_SESSION['idTipoUsuario'] = 2;
@@ -29,13 +30,17 @@ function montaMenu($navegacao){
         case 'favoritos':
             $menuFavoritos = 'selected';
             break;
-        
-        case 'cadastro-notificacao':
-            $menuNotificacoes = 'selected';
+
+        case 'cadastro-assunto':
+            $menuAssuntos = 'selected';
             break;
 
         case 'cadastro-questao':
             $menuQuestoes = 'selected';
+            break;
+
+        case 'cadastro-notificacao':
+            $menuNotificacoes = 'selected';
             break;
         
         default:
@@ -59,7 +64,7 @@ function montaMenu($navegacao){
             .'<span class="tooltip">Simulados</span>'
         .'</li>'
         .'<li class="'.$menuComunidade.'">'
-            .'<a href="#">'
+            .'<a href="comunidade">'
                 .'<svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="comment-alt-lines" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-comment-alt-lines fa-w-16 fa-2x"><path fill="currentColor" d="M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h96v84c0 7.1 5.8 12 12 12 2.4 0 4.9-.7 7.1-2.4L304 416h144c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64zm32 352c0 17.6-14.4 32-32 32H293.3l-8.5 6.4L192 460v-76H64c-17.6 0-32-14.4-32-32V64c0-17.6 14.4-32 32-32h384c17.6 0 32 14.4 32 32v288zM280 240H136c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h144c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm96-96H136c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8z" class=""></path></svg>'
                 .'<span class="nome-links-navegacao">Comunidade</span>'
             .'</a>'                
@@ -75,16 +80,16 @@ function montaMenu($navegacao){
 
         if($_SESSION['idTipoUsuario'] == 1){
             $menu .=
-            '<li class="'.$menuQuestoes.'">'
-                .'<a href="cadastro-questao">'
-                    .'<svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="highlighter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 544 512" class="svg-inline--fa fa-highlighter fa-w-17 fa-2x"><path fill="currentColor" d="M528.61 75.91l-60.49-60.52C457.91 5.16 444.45 0 430.98 0a52.38 52.38 0 0 0-34.75 13.15L110.59 261.8c-10.29 9.08-14.33 23.35-10.33 36.49l12.49 41.02-36.54 36.56c-6.74 6.75-6.74 17.68 0 24.43l.25.26L0 479.98 99.88 512l43.99-44.01.02.02c6.75 6.75 17.69 6.75 24.44 0l36.46-36.47 40.91 12.53c18.01 5.51 31.41-4.54 36.51-10.32l248.65-285.9c18.35-20.82 17.37-52.32-2.25-71.94zM91.05 475.55l-32.21-10.33 40.26-42.03 22.14 22.15-30.19 30.21zm167.16-62.99c-.63.72-1.4.94-2.32.94-.26 0-.54-.02-.83-.05l-40.91-12.53-18.39-5.63-39.65 39.67-46.85-46.88 39.71-39.72-5.6-18.38-12.49-41.02c-.34-1.13.01-2.36.73-3l44.97-39.15 120.74 120.8-39.11 44.95zm248.51-285.73L318.36 343.4l-117.6-117.66L417.4 37.15c4.5-3.97 17.55-9.68 28.1.88l60.48 60.52c7.65 7.65 8.04 20 .74 28.28z" class=""></path></svg>'
+            '<li class="'.$menuAssuntos.'">'
+                .'<a href="cadastro-assunto">'
+                    .'<svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="marker" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-marker fa-w-16 fa-2x"><path fill="currentColor" d="M421.4 0c-23.17 0-46.33 8.84-64 26.52l-6.28 6.28-23.43-23.43c-12.5-12.5-32.75-12.5-45.25 0L152.36 139.48c-3.12 3.12-3.12 8.19 0 11.31l11.31 11.31c3.12 3.12 8.19 3.12 11.31 0L305.07 32l23.42 23.43-234.55 234.6A327.069 327.069 0 0 0 .18 485.12l-.03.23C-1.45 499.72 9.88 512 23.94 512c.89 0 1.78-.05 2.69-.15a326.972 326.972 0 0 0 195.3-93.8L485.4 154.54C542.54 97.38 501.35 0 421.4 0zM199.31 395.42c-44.99 45-103.91 74.41-166.07 83.39 9.13-62.64 38.49-121.32 83.32-166.16l78.71-78.72 82.75 82.77-78.71 78.72zm263.46-263.51L300.64 294.07l-82.75-82.77L380.02 49.14C391.07 38.09 405.77 32 421.4 32c32.32 0 58.52 26.16 58.52 58.53-.01 15.63-6.09 30.33-17.15 41.38z" class=""></path></svg>'
                     .'<span class="nome-links-navegacao">Cadastro de questões</span>'
                 .'</a>'
-                .'<span class="tooltip">Cadastro de questões</span>'     
+                .'<span class="tooltip">Cadastro de assuntos</span>'     
             .'</li>'
             .'<li class="'.$menuNotificacoes.'">'
                 .'<a href="cadastro-notificacao">'
-                .'<svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="highlighter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 544 512" class="svg-inline--fa fa-highlighter fa-w-17 fa-2x"><path fill="currentColor" d="M528.61 75.91l-60.49-60.52C457.91 5.16 444.45 0 430.98 0a52.38 52.38 0 0 0-34.75 13.15L110.59 261.8c-10.29 9.08-14.33 23.35-10.33 36.49l12.49 41.02-36.54 36.56c-6.74 6.75-6.74 17.68 0 24.43l.25.26L0 479.98 99.88 512l43.99-44.01.02.02c6.75 6.75 17.69 6.75 24.44 0l36.46-36.47 40.91 12.53c18.01 5.51 31.41-4.54 36.51-10.32l248.65-285.9c18.35-20.82 17.37-52.32-2.25-71.94zM91.05 475.55l-32.21-10.33 40.26-42.03 22.14 22.15-30.19 30.21zm167.16-62.99c-.63.72-1.4.94-2.32.94-.26 0-.54-.02-.83-.05l-40.91-12.53-18.39-5.63-39.65 39.67-46.85-46.88 39.71-39.72-5.6-18.38-12.49-41.02c-.34-1.13.01-2.36.73-3l44.97-39.15 120.74 120.8-39.11 44.95zm248.51-285.73L318.36 343.4l-117.6-117.66L417.4 37.15c4.5-3.97 17.55-9.68 28.1.88l60.48 60.52c7.65 7.65 8.04 20 .74 28.28z" class=""></path></svg>'
+                .'<svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="bell" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-bell fa-w-14 fa-1x"><path fill="currentColor" d="M224 480c-17.66 0-32-14.38-32-32.03h-32c0 35.31 28.72 64.03 64 64.03s64-28.72 64-64.03h-32c0 17.65-14.34 32.03-32 32.03zm209.38-145.19c-27.96-26.62-49.34-54.48-49.34-148.91 0-79.59-63.39-144.5-144.04-152.35V16c0-8.84-7.16-16-16-16s-16 7.16-16 16v17.56C127.35 41.41 63.96 106.31 63.96 185.9c0 94.42-21.39 122.29-49.35 148.91-13.97 13.3-18.38 33.41-11.25 51.23C10.64 404.24 28.16 416 48 416h352c19.84 0 37.36-11.77 44.64-29.97 7.13-17.82 2.71-37.92-11.26-51.22zM400 384H48c-14.23 0-21.34-16.47-11.32-26.01 34.86-33.19 59.28-70.34 59.28-172.08C95.96 118.53 153.23 64 224 64c70.76 0 128.04 54.52 128.04 121.9 0 101.35 24.21 138.7 59.28 172.08C421.38 367.57 414.17 384 400 384z" class=""></path></svg>'
                     .'<span class="nome-links-navegacao">Cadastro de notificações</span>'
                 .'</a>'                
                 .'<span class="tooltip">Cadastro de notificações</span>'

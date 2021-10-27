@@ -68,7 +68,7 @@
         <div class="system-content">
             <div class="system-title">
                 <h3>Sistema</h3>
-                <p>Adicione, edite, exclua aqui!</p>
+                <p>Adicione a questão aqui.</p>
             </div>
             <form method="POST" action="Controller/salvaQuestao.php" enctype="multipart/form-data">            
                 <input type="text" name="nID" visible="false" value="0" hidden>
@@ -109,7 +109,7 @@
                 <label for="iMateria">Matéria: </label>
                 <select name="nMateria" id="iMateria" required="true">
                     <option value="">Selecione</option>
-                    <?php echo consultaMaterias(); ?>
+                    <?php echo consultaMaterias(0); ?>
                 </select></br>
 
                 <label for="iAssunto">Assunto: </label>
@@ -120,7 +120,7 @@
                 <label for="iBanca">Banca: </label>
                 <select name="nBanca" id="iBanca" required="true">
                     <option value="">Selecione</option>
-                    <?php echo consultaBancas(); ?>
+                    <?php echo consultaBancas(0); ?>
                 </select></br>
 
                 <label for="iTipoQuestao">Tipo da questão: </label>
