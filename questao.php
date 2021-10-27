@@ -75,13 +75,7 @@
                         23/58
                     </div>
                         <?php echo montaQuestao($_GET['q']); ?>
-                </div>
-                <a href="#" onClick="validaQuestao('<?php echo $_GET['q']; ?>')">VALIDAR QUESTÃO</a>
-
-                <br>
-                <br>
-                <a href="#" onClick="mostraResposta('<?php echo $_GET['q']; ?>')">MOSTRAR RESPOSTA</a>
-                
+                </div>            
             </form>
         </div>
     </div>
@@ -215,6 +209,20 @@
             }
         }); 
 
+    }
+
+    function select(id){
+
+        let label = document.getElementById(id);
+        let selecionado = '';
+
+        for(var i = 1;i <= 5;i++){
+            idSelecao = 'id'+i;
+            selecionado = document.getElementById(idSelecao)
+            selecionado.classList.remove("selecionado");
+        }
+
+        label.classList.add("selecionado");
     }
     
 </script>
