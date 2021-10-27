@@ -67,7 +67,7 @@
                         <?php echo montaListaNotificacoes($_SESSION['idUsuario']); ?>
                     </div>                    
                 </div>
-                <h5>Configurações</h5>
+                <h5><a href="troca_senha">Configurações</a></h5>
             </div>
         </div>    
     </header>
@@ -113,44 +113,70 @@
                     <input type="text" id="iAlternativaE" name="nAlternativaE" class="input-cadastro">
                 </div>
 
-                <label for="iResposta">Resposta: </label>
-                <select name="nResposta" id="iResposta" required="true">
-                    <option value="">Selecione</option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                </select></br>
+                <div class="container-cadastro" style="display:flex;">
+                    <div style="margin-right:10px;">
+                        <label class="label-cadastro" for="iResposta">Resposta: </label>
+                        <div class="caixa-select">
+                            <select class="filtro select select-cadastro-questao" name="nResposta" id="iResposta" required="true">
+                                <option value="">Selecione</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">E</option>
+                            </select>
+                        </div> 
+                    </div>                                    
 
-                <label for="iMateria">Matéria: </label>
-                <select name="nMateria" id="iMateria" required="true">
-                    <option value="">Selecione</option>
-                    <?php echo consultaMaterias(0); ?>
-                </select></br>
+                    <div style="margin-right:10px;">
+                        <label class="label-cadastro" for="iMateria">Matéria: </label>
+                        <div class="caixa-select">
+                            <select class="filtro select select-cadastro-questao" name="nMateria" id="iMateria" required="true">
+                                <option value="">Selecione</option>
+                                <?php echo consultaMaterias(0); ?>
+                            </select>
+                        </div>
+                    </div>                    
 
-                <label for="iAssunto">Assunto: </label>
-                <select name="nAssunto" id="iAssunto" required="true">
-                    <option value="">Selecione</option>
-                </select></br>
+                    <div style="margin-right:10px;">
+                        <label class="label-cadastro" for="iAssunto">Assunto: </label>
+                        <div class="caixa-select">                            
+                            <select class="filtro select select-cadastro-questao" name="nAssunto" id="iAssunto" required="true">
+                                <option value="">Selecione</option>
+                            </select>
+                        </div>
+                    </div>                    
 
-                <label for="iBanca">Banca: </label>
-                <select name="nBanca" id="iBanca" required="true">
-                    <option value="">Selecione</option>
-                    <?php echo consultaBancas(0); ?>
-                </select></br>
+                    <div style="margin-right:10px;">
+                        <label class="label-cadastro" for="iBanca">Banca: </label>
+                        <div class="caixa-select">                            
+                            <select class="filtro select select-cadastro-questao" name="nBanca" id="iBanca" required="true">
+                                <option value="">Selecione</option>
+                                <?php echo consultaBancas(0); ?>
+                            </select>
+                        </div>
+                    </div>                    
 
-                <label for="iTipoQuestao">Tipo da questão: </label>
-                <select name="nTipoQuestao" id="iTipoQuestao">
-                    <option value="1">Discursiva</option>
-                    <option value="2">Objetiva</option>
-                    <option value="3">Somatória</option>
-                </select><br>
+                    <div>
+                        <label class="label-cadastro" for="iTipoQuestao">Tipo da questão: </label>
+                        <div class="caixa-select">                            
+                            <select class="filtro select select-cadastro-questao" name="nTipoQuestao" id="iTipoQuestao">
+                                <option value="1">Discursiva</option>
+                                <option value="2">Objetiva</option>
+                                <option value="3">Somatória</option>
+                            </select>
+                        </div>
+                    </div>                                                          
 
-                <div></div>
-                <label for="iAno">Ano: </label>
-                <input type="number" id="iAno" name="nAno"></br>
-                <input type="submit">
+                </div>
+                <div class="container-cadastro" style="margin-top: 10px;">
+                    <label for="iAno" class="label-cadastro">Ano: </label>
+                    <input type="number" id="iAno" name="nAno" min=0 class="input-cadastro"></br>
+                </div>  
+
+                <div class="container-cadastro" style="display:flex;justify-content: end;">
+                    <input class="buttom-cadastro" type="submit" value="Cadastrar questão">
+                </div>
             </div>            
         
         </form>

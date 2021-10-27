@@ -70,7 +70,7 @@
                             .'        <?php echo montaListaNotificacoes($_SESSION["idUsuario"]); ?>'
                             .'    </div>'                  
                             .'</div>'
-                            .'<h5>Configurações</h5>';
+                            .'<h5><a href="troca_senha">Configurações</a></h5>';
                     }else{
                         echo "<h5> Faça login para receber notificações! </h5>";
                     }
