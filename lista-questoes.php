@@ -64,7 +64,7 @@
                         echo '<div id="notificacoes-container" class="notificacoes-container">'
                             .'    <h5>Notificações</h5>'
                             .'    <div class="notificacoes-content">'
-                            .'        <?php echo montaListaNotificacoes($_SESSION["idUsuario"]); ?>'
+                            .montaListaNotificacoes($_SESSION["idUsuario"])
                             .'    </div>'                  
                             .'</div>'
                             .'<h5><a href="troca_senha">Configurações</a></h5>';
