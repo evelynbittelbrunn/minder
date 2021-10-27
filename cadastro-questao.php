@@ -70,91 +70,95 @@
                 <h3>Sistema</h3>
                 <p>Adicione a questão aqui.</p>
             </div>
-            <form method="POST" action="Controller/salvaQuestao.php" enctype="multipart/form-data">            
-                <input type="text" name="nID" visible="false" value="0" hidden>
+            
+            <form method="POST" action="Controller/salvaQuestao.php" enctype="multipart/form-data">
+                <div class="card-cadastro">
+                    <input type="text" name="nID" visible="false" value="0" hidden>
 
-                <label for="iDescricao">Descrição da questão: </label>
-                <textarea id="iDescricao" name="nDescricao" rows="4" cols="50"></textarea></br>
+                    <label for="iDescricao">Descrição da questão: </label>
+                    <textarea id="iDescricao" name="nDescricao" rows="4" cols="50"></textarea></br>
 
-                <div>
-                <label>Imagem:</label> 
-                <input type="file" name="nImagem">
-                </div></br>
+                    <div>
+                    <label>Imagem:</label> 
+                    <input type="file" name="nImagem">
+                    </div></br>
 
-                <label for="iAlternativaA">Alternativa A: </label>
-                <input type="text" id="iAlternativaA" name="nAlternativaA"></br>
+                    <label for="iAlternativaA">Alternativa A: </label>
+                    <input type="text" id="iAlternativaA" name="nAlternativaA"></br>
 
-                <label for="iAlternativaB">Alternativa B: </label>
-                <input type="text" id="iAlternativaB" name="nAlternativaB"></br>
+                    <label for="iAlternativaB">Alternativa B: </label>
+                    <input type="text" id="iAlternativaB" name="nAlternativaB"></br>
 
-                <label for="iAlternativaC">Alternativa C: </label>
-                <input type="text" id="iAlternativaC" name="nAlternativaC"></br>
+                    <label for="iAlternativaC">Alternativa C: </label>
+                    <input type="text" id="iAlternativaC" name="nAlternativaC"></br>
 
-                <label for="iAlternativaD">Alternativa D: </label>
-                <input type="text" id="iAlternativaD" name="nAlternativaD"></br>
+                    <label for="iAlternativaD">Alternativa D: </label>
+                    <input type="text" id="iAlternativaD" name="nAlternativaD"></br>
 
-                <label for="iAlternativaE">Alternativa E: </label>
-                <input type="text" id="iAlternativaE" name="nAlternativaE"></br>
+                    <label for="iAlternativaE">Alternativa E: </label>
+                    <input type="text" id="iAlternativaE" name="nAlternativaE"></br>
 
-                <label for="iResposta">Resposta: </label>
-                <select name="nResposta" id="iResposta" required="true">
-                    <option value="">Selecione</option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                </select></br>
+                    <label for="iResposta">Resposta: </label>
+                    <select name="nResposta" id="iResposta" required="true">
+                        <option value="">Selecione</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                    </select></br>
 
-                <label for="iMateria">Matéria: </label>
-                <select name="nMateria" id="iMateria" required="true">
-                    <option value="">Selecione</option>
-                    <?php echo consultaMaterias(0); ?>
-                </select></br>
+                    <label for="iMateria">Matéria: </label>
+                    <select name="nMateria" id="iMateria" required="true">
+                        <option value="">Selecione</option>
+                        <?php echo consultaMaterias(); ?>
+                    </select></br>
 
-                <label for="iAssunto">Assunto: </label>
-                <select name="nAssunto" id="iAssunto" required="true">
-                    <option value="">Selecione</option>
-                </select></br>
+                    <label for="iAssunto">Assunto: </label>
+                    <select name="nAssunto" id="iAssunto" required="true">
+                        <option value="">Selecione</option>
+                    </select></br>
 
-                <label for="iBanca">Banca: </label>
-                <select name="nBanca" id="iBanca" required="true">
-                    <option value="">Selecione</option>
-                    <?php echo consultaBancas(0); ?>
-                </select></br>
+                    <label for="iBanca">Banca: </label>
+                    <select name="nBanca" id="iBanca" required="true">
+                        <option value="">Selecione</option>
+                        <?php echo consultaBancas(); ?>
+                    </select></br>
 
-                <label for="iTipoQuestao">Tipo da questão: </label>
-                <select name="nTipoQuestao" id="iTipoQuestao">
-                    <option value="1">Discursiva</option>
-                    <option value="2">Objetiva</option>
-                    <option value="3">Somatória</option>
-                </select><br>
+                    <label for="iTipoQuestao">Tipo da questão: </label>
+                    <select name="nTipoQuestao" id="iTipoQuestao">
+                        <option value="1">Discursiva</option>
+                        <option value="2">Objetiva</option>
+                        <option value="3">Somatória</option>
+                    </select><br>
 
-                <div></div>
-                <label for="iAno">Ano: </label>
-                <input type="number" id="iAno" name="nAno"></br>
-                <input type="submit">
+                    <div></div>
+                    <label for="iAno">Ano: </label>
+                    <input type="number" id="iAno" name="nAno"></br>
+                    <input type="submit">
+                </div>            
+            
             </form>
         </div>
     </div>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script>
-    
-$(document).ready(function(){
-    $('#iMateria').on('change', function(){
-        var materia = $(this).val();
-        if(materia){
-            $.ajax({
-                type:'POST',
-                url:"Controller/carregaAssuntosMateria.php",
-                data:'idTipoMateria='+materia,
-                success: function(html) {
-                    $('#iAssunto').html(html);
-                }
-            });
-        }
+        
+    $(document).ready(function(){
+        $('#iMateria').on('change', function(){
+            var materia = $(this).val();
+            if(materia){
+                $.ajax({
+                    type:'POST',
+                    url:"Controller/carregaAssuntosMateria.php",
+                    data:'idTipoMateria='+materia,
+                    success: function(html) {
+                        $('#iAssunto').html(html);
+                    }
+                });
+            }
+        });
     });
-});
 
     let btn = document.querySelector("#btn-menu");
     let sidebar = document.querySelector(".sidebar");

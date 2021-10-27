@@ -70,7 +70,7 @@
             </div>
         </div>    
     </header>
-    <div class="mensagem-resultado-filtro">'
+    <div class="mensagem-resultado-filtro">
         <h2>Em construção! Em breve verá algo aqui.</h2>
     </div>
 <!-- Scripts -->

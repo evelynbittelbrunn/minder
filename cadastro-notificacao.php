@@ -73,15 +73,20 @@
     <div class="home-content">
         <div class="questoes-container">
             <form method="POST" action="Controller/salvaNotificacao.php" enctype="multipart/form-data" id="iQuestao">
-                <div class="card-cadastro">
-                    <h3 class="cont-text" align="center">Cadastro de notificações - (Mudar estética)</h3>
-                        <label for="iNotificacao">Descrição:</label>
+                <div class="card-notificacao">
+                    <h3 class="cont-text" style="text-transform: uppercase;" align="center">Cadastro de notificações</h3>
+                    <div class="container-notificacoes">
+                        <label style="display: block;" for="iNotificacao">Descrição:</label>
                         <input type="text" name="nID" visible="false" value="<?php echo $_SESSION['idNotificacao']; ?>" hidden>
-                        <textarea name="nNotificacao" id="iNotificacao" cols="30" rows="10"></textarea>
-                        <br>
-                        <label for="iReferencia">Referência (Link): </label>
-                        <input type="text" id="iReferencia" name="nReferencia">
-                        <button>Enviar</button>
+                        <textarea class="input-notificacoes" name="nNotificacao" id="iNotificacao" cols="30" rows="5"></textarea>
+                    </div>                    
+                    <div class="container-notificacoes">
+                        <label style="display: block;" for="iReferencia">Referência (Link): </label>
+                        <input type="text" class="input-notificacoes" id="iReferencia" name="nReferencia">
+                    </div>   
+                    <div class="container-notificacoes" style="display:flex;justify-content:end;">
+                        <button class="buttom-notificacoes">Cadastrar Notificação</button>
+                    </div>                    
                 </div>
             </form>
         </div>
