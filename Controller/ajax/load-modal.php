@@ -28,10 +28,14 @@ if($sql->rowCount() > 0){
         <div class="modal">'
             .'<button class="fechar">X</button>'
             .'<div class="modal-corpo">'
-                .'<form method="POST" action="Controller/salvaQuestao.php" enctype="multipart/form-data">'            
-                    .'<input type="text" name="nID" visible="false" value="'.$value['idQuestao'].'" hidden>'
-                    .'<label for="iDescricao">Descrição da questão: </label>'
-                    .'<textarea id="iDescricao" name="nDescricao" rows="4" cols="50">'.$value['Descricao'].'</textarea></br>'
+                .'<form method="POST" action="Controller/salvaQuestao.php" enctype="multipart/form-data">'   
+                
+                    .'<div class="container-modal">'
+                        .'<input type="text" name="nID" visible="false" value="'.$value['idQuestao'].'" hidden>'
+                        .'<label for="iDescricao">Descrição da questão: </label>'
+                        .'<textarea id="iDescricao" name="nDescricao" rows="5" cols="30" class="input-modal">'.$value['Descricao'].'</textarea></br>'
+                    .'</div>'
+                    
 
                     .'<div>'
                     .'<label>Imagem:</label>' 
@@ -39,19 +43,19 @@ if($sql->rowCount() > 0){
                     .'</div></br>'
 
                     .'<label for="iAlternativaA">Alternativa A: </label>'
-                    .'<input type="text" id="iAlternativaA" name="nAlternativaA" value="'.$value['AlternativaA'].'"></br>'
+                    .'<input type="text" id="iAlternativaA" name="nAlternativaA" value="'.$value['AlternativaA'].'" class="input-modal"></br>'
 
                     .'<label for="iAlternativaB">Alternativa B: </label>'
-                    .'<input type="text" id="iAlternativaB" name="nAlternativaB" value="'.$value['AlternativaB'].'"></br>'
+                    .'<input type="text" id="iAlternativaB" name="nAlternativaB" value="'.$value['AlternativaB'].'" class="input-modal"></br>'
 
                     .'<label for="iAlternativaC">Alternativa C: </label>'
-                    .'<input type="text" id="iAlternativaC" name="nAlternativaC" value="'.$value['AlternativaC'].'"></br>'
+                    .'<input type="text" id="iAlternativaC" name="nAlternativaC" value="'.$value['AlternativaC'].'" class="input-modal"></br>'
 
                     .'<label for="iAlternativaD">Alternativa D: </label>'
-                    .'<input type="text" id="iAlternativaD" name="nAlternativaD" value="'.$value['AlternativaD'].'"></br>'
+                    .'<input type="text" id="iAlternativaD" name="nAlternativaD" value="'.$value['AlternativaD'].'" class="input-modal"></br>'
 
                     .'<label for="iAlternativaE">Alternativa E: </label>'
-                    .'<input type="text" id="iAlternativaE" name="nAlternativaE" value="'.$value['AlternativaE'].'"></br>'
+                    .'<input type="text" id="iAlternativaE" name="nAlternativaE" value="'.$value['AlternativaE'].'" class="input-modal"></br>'
 
                     .'<label for="iResposta">Resposta: </label>'
                    .' <select name="nResposta" id="iResposta" required="true">'

@@ -1170,7 +1170,7 @@ header{
 .modal{
     /*width: 90%;*/
     width: 1.191,566px;
-    background-color: white;
+    background-color: #1D2329;
     position: relative;
     padding: 10px;
 }
@@ -1189,6 +1189,31 @@ header{
 
 .mostrar .modal{
     animation: modal 1s;
+}
+
+.container-modal{
+    margin: 0 auto;
+    width: 90%;
+}
+
+.container-modal-input{
+    
+}
+
+.container-modal label{
+    color: #C0BABB;
+    margin-bottom: 10px;
+}
+
+.input-modal{
+    width: 100%;
+    outline: none;
+    background-color: #0E1114;
+    border:none;
+    padding: 10px;
+    color:#C0BABB;
+    margin-bottom:15px;
+    border-radius: 5px;
 }
 
 /*  ASSUNTOS  */
@@ -1288,3 +1313,4 @@ header{
     background-color: #1D2329;    
     cursor:pointer;
 }
+

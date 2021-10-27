@@ -101,6 +101,7 @@ function verificaFavorito($idQuestao){
 
 //Consulta os assuntos
 function consultaAssuntos($id){
+    $option = '';
     include('conexao.php');
 
     $sql = "SELECT * FROM tb_TipoAssunto "

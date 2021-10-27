@@ -55,6 +55,7 @@ function consultaTipoQuestoes($id){
 
 //Consulta bancas
 function consultaBancas($id){
+    $option = '';
     include('conexao.php');
 
     $sql = "SELECT * FROM tb_Banca WHERE idBanca <> ".$id.";";
