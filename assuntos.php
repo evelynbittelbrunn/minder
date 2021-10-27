@@ -54,14 +54,14 @@
                     <h4><?php echo $_SESSION['NomeUsuario']; ?></h4>
                 </div>
                 <?php 
-                    if($_SESSION['idUsuario'] != '0'){
-                        echo '<div id="notificacoes-container" class="notificacoes-container">'
-                            .'    <h5>Notificações</h5>'
-                            .'    <div class="notificacoes-content">'
-                            .'        <?php echo montaListaNotificacoes($_SESSION["idUsuario"]); ?>'
-                            .'    </div>'                  
-                            .'</div>'
-                            .'<h5><a href="troca_senha">Configurações</a></h5>';
+                   if($_SESSION['idUsuario'] != '0'){
+                    echo '<div id="notificacoes-container" class="notificacoes-container">'
+                        .'    <h5>Notificações</h5>'
+                        .'    <div class="notificacoes-content">'
+                        .montaListaNotificacoes($_SESSION["idUsuario"])
+                        .'    </div>'                  
+                        .'</div>'
+                        .'<h5><a href="troca_senha">Configurações</a></h5>';
                     }else{
                         echo "<h5> Faça login para receber notificações! </h5>";
                     }
