@@ -61,7 +61,7 @@ if($sql->rowCount() > 0){
 
         echo 
         '<div class="questao-container-caixa">'
-            .'<a href="questao?q='.MD5($campo['idQuestao']).'&a='.$assunto.'">'
+            .'<a href="questao?q='.MD5($campo['idQuestao']).'&a='.$assunto.'" style="display:block;width:100%;">'
                 .'<div class="questao-row">'
                     .'<p>'.$campo['Descricao'].'</p>'             
                 .'</div>'

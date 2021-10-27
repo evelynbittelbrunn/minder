@@ -166,7 +166,7 @@ function montaListaQuestoes($idMateria,$idAssunto){
             if($_SESSION['idUsuario'] != 0){
                 $lista .= 
                 '<div class="questao-container-caixa">'
-                    .'<a href="questao?q='.MD5($campo['idQuestao']).'&a='.$idAssunto.'">'
+                    .'<a href="questao?q='.MD5($campo['idQuestao']).'&a='.$idAssunto.'" style="display:block;width:100%;">'
                         .'<div class="questao-row">'
                             .'<p>'.$campo['Descricao'].'</p>'             
                         .'</div>'
