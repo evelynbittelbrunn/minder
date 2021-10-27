@@ -1,10 +1,6 @@
 <?php
 	session_start();
     include('Controller/function.php');
-    carregaPerfil($_SESSION['idUsuario']); 
-    if (isset($_SESSION['AnoFiltro']) || isset($_SESSION['idBancaFiltro']) || isset($_SESSION['questoesRespondidas'])){
-        session_destroy();
-    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -14,10 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"> 
     <link href='css/style.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="shortcut icon" type="imagex/png" href="img/icone-page-minder.png">
     <!-- ÍCONES -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Minder | Vestibulares</title>
 </head>
 <body>
@@ -34,7 +30,7 @@
             </div>            
         </div>
         <ul class="navegacao">
-            <?php echo montaMenu('index'); ?>
+            <?php echo montaMenu('cadastro-assunto'); ?>
         </ul>
     </div>
     <header>
@@ -71,46 +67,13 @@
     <div class="home-content">
         <div class="questoes-container">
             <div class="cards-container-titulo">
-                <h3>Lista de questões</h3>
-                <p>Questões sobre <?php echo descrAssunto($_GET['a']); ?> (<?php echo descrMateria($_GET['m']);?>)</p>
-            </div>
-            <div class="filtros-container">
-                <div class="filtros">
-                    <div class="caixa-select">
-                        <select class="filtro select" id="iAnoFiltro" name="" id="">
-                            <option value="0">ANO</option>
-                            <?php echo listaAnoSelect($_GET['m'],$_GET['a']); ?>
-                        </select>                    
-                    </div>  
-                    <div class="caixa-select">
-                        <select class="filtro select" id="iBancaFiltro" name="" id="">
-                            <option value="0">BANCA</option>
-                            <?php echo listaBancaSelect($_GET['m'],$_GET['a']); ?>
-                        </select>                    
-                    </div>  
-                    <div class="caixa-check">                    
-                        <input type="checkbox" id="iRespondidasFiltro" name="" id="check-respondida">
-                        <label for="iRespondidasFiltro">Não respondidas</label>
-                    </div>  
-                    <input type="text" id="iMateria" value="<?php echo $_GET['m']; ?>" hidden>
-                    <input type="text" id="iAssunto" value="<?php echo $_GET['a']; ?>" hidden>
-                </div>  
-                <a href="#" id="iFiltro">
-                    <div class="botao-filtro">FILTRAR</div>  
-                </a>     
-                <?php if($_SESSION['idTipoUsuario'] == 1){ ?>     
-                <a href="cadastro-questao" id="iCadastro">
-                    <div class="botao-filtro">CADASTRAR</div>  
-                </a>       
-                <?php } ?>                   
+                <h3>Lista de assuntos</h3>
+                <p>Lista das questões cadastradas</p>
             </div>
             <div class="questoes-container-content">
-                <?php echo montaListaQuestoes($_GET['m'],$_GET['a']); ?>
+                <?php echo listaAssuntosCadastrados(); ?>
             </div>
         </div>
-    </div>
-
-    <div id="modal-produto" class="modal-container">
     </div>
 
     <!-- JQUERY -->
@@ -183,33 +146,6 @@
             }
 
         
-        }
-
-        // MODAL
-
-        function iniciaModal(modalID,idQuestao) {
-
-            const modal = document.getElementById(modalID);
-
-            $.ajax({
-                
-                url: "Controller/ajax/load-modal.php?id="+idQuestao,
-                success: function(result){
-                    $(".modal-container").html(result);
-                    
-                },
-                error: function(){
-                    $(".modal-container").html("OI");
-                    
-                }            
-            });
-
-            modal.classList.add('mostrar');
-            modal.addEventListener('click', (e) => {
-                if(e.target.id == modalID || e.target.className == 'fechar'){
-                    modal.classList.remove('mostrar');
-                }
-            })
         }
        
     </script>

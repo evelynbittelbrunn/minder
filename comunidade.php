@@ -30,7 +30,7 @@
             </div>            
         </div>
         <ul class="navegacao">
-            <?php echo montaMenu('simulados'); ?>
+            <?php echo montaMenu('comunidade'); ?>
         </ul>
     </div>
     <header>
