@@ -104,12 +104,7 @@
                 </div>  
                 <a href="#" id="iFiltro">
                     <div class="botao-filtro">FILTRAR</div>  
-                </a>     
-                <?php if($_SESSION['idTipoUsuario'] == 1){ ?>     
-                <a href="cadastro-questao" id="iCadastro">
-                    <div class="botao-filtro">CADASTRAR</div>  
-                </a>       
-                <?php } ?>                   
+                </a>                 
             </div>
             <div class="questoes-container-content">
                 <?php echo montaListaQuestoes($_GET['m'],$_GET['a']); ?>
