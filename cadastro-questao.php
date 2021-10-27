@@ -119,7 +119,7 @@
                 <label for="iMateria">Matéria: </label>
                 <select name="nMateria" id="iMateria" required="true">
                     <option value="">Selecione</option>
-                    <?php echo consultaMaterias(); ?>
+                    <?php echo consultaMaterias(0); ?>
                 </select></br>
 
                 <label for="iAssunto">Assunto: </label>
@@ -130,7 +130,7 @@
                 <label for="iBanca">Banca: </label>
                 <select name="nBanca" id="iBanca" required="true">
                     <option value="">Selecione</option>
-                    <?php echo consultaBancas(); ?>
+                    <?php echo consultaBancas(0); ?>
                 </select></br>
 
                 <label for="iTipoQuestao">Tipo da questão: </label>

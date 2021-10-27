@@ -73,9 +73,6 @@
     <div class="home-content">
         <div class="questoes-container">
             <form method="POST" enctype="multipart/form-data" id="iQuestao">
-                <div class="card-progress">
-                    Colocar a progressbar
-                </div>
                 <div class="card-question">
                     <div class="cont-text" align="center">
                         23/58
