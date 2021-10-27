@@ -1283,6 +1283,22 @@ header{
     border: 1px solid #4516A9;
 }
 
+.buttom-questao{
+    border-radius: 5px;
+    background-color: #A855FF;
+    color: #171C21;
+    font-weight: 600;
+    border: 1px solid #A855FF;
+    padding:10px;
+}
+
+.buttom-questao:hover{
+    border: 1px solid #C0BABB;
+    color: #C0BABB;
+    background-color: #1D2329;    
+    cursor:pointer;
+}
+
 /* NOTIFICAÇÕES */
 
 .card-notificacao {
@@ -1366,7 +1382,7 @@ header{
     display: block;
 }
 
-.buttom-notificacoes{
+.buttom-cadastro{
     border-radius: 5px;
     background-color: #A855FF;
     color: #171C21;
@@ -1375,9 +1391,18 @@ header{
     padding:10px;
 }
 
-.buttom-notificacoes:hover{
+.buttom-cadastro:hover{
     border: 1px solid #C0BABB;
     color: #C0BABB;
     background-color: #1D2329;    
     cursor:pointer;
+}
+
+.select-cadastro-questao{
+    background-color: #0E1114;
+    display: inline-block;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    outline: 0;
 }
