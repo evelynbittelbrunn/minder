@@ -209,7 +209,7 @@
                 <a href="assuntos?m=<?php echo MD5(7); ?>">
                     <div class="card">
                         <div class="card-header">
-                            <img src="img/imagem1.png" alt="">
+                            <img src="img/image10.jpg" alt="">
                         </div>
                         <div class="card-bottom">
                             <div class="caixa-texto">
@@ -229,7 +229,7 @@
                 <a href="assuntos?m=<?php echo MD5(8); ?>">
                     <div class="card">
                         <div class="card-header">
-                            <img src="img/imagem1.png" alt="">
+                            <img src="img/image7.png" alt="">
                         </div>
                         <div class="card-bottom">
                             <div class="caixa-texto">
@@ -249,7 +249,7 @@
                 <a href="assuntos?m=<?php echo MD5(9); ?>">
                     <div class="card">
                         <div class="card-header">
-                            <img src="img/imagem1.png" alt="">
+                            <img src="img/image13.jpg" alt="">
                         </div>
                         <div class="card-bottom">
                             <div class="caixa-texto">
@@ -269,7 +269,7 @@
                 <a href="assuntos?m=<?php echo MD5(10); ?>">
                     <div class="card">
                         <div class="card-header">
-                            <img src="img/imagem1.png" alt="">
+                            <img src="img/image9.jpg" alt="">
                         </div>
                         <div class="card-bottom">
                             <div class="caixa-texto">
@@ -289,7 +289,7 @@
                 <a href="assuntos?m=<?php echo MD5(11); ?>">
                     <div class="card">
                         <div class="card-header">
-                            <img src="img/imagem1.png" alt="">
+                            <img src="img/image11.jpg" alt="">
                         </div>
                         <div class="card-bottom">
                             <div class="caixa-texto">
@@ -309,7 +309,7 @@
                 <a href="assuntos?m=<?php echo MD5(12); ?>">
                     <div class="card">
                         <div class="card-header">
-                            <img src="img/imagem1.png" alt="">
+                            <img src="img/image12.jpg" alt="">
                         </div>
                         <div class="card-bottom">
                             <div class="caixa-texto">
