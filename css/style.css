@@ -443,10 +443,10 @@ header{
     /*position: absolute;*/
     height: 100%;
     width: calc(100% - 78px);
-    margin-top: 60px;
+    /*margin-top: 60px;*/
     margin-left: 78px;
     transition: all 0.5s ease;
-    background-color: #0E1114;    
+    /*background-color: red;*/    
     padding-top: 25px;
 }
 
@@ -472,13 +472,13 @@ header{
 
 .cards-container{
     width: 90%;
-    margin: 0 auto;
+    margin: 60px auto 0 auto;
 }
 
 .cards-container-row{
     display: grid;
     width: 90%;
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
     justify-content: space-between;
     gap: 20px;
     grid-template-columns: repeat(4, 1fr);
@@ -1074,7 +1074,7 @@ header{
 
 .questoes-container{
     width: 90%;
-    margin: 0 auto;
+    margin: 60px auto 20px auto;
 }
 
 .questao-row{
@@ -1270,7 +1270,8 @@ header{
 /* QUESTAO */
 
 .label-questao{
-    display: block;
+    display: flex;
+    align-items: center;
     padding: 15px 10px;
     margin-bottom: 10px;
     border-radius: 15px;
@@ -1355,6 +1356,7 @@ header{
     margin: auto;
     max-width: 80%;
     border-radius: 5px;
+    margin-top: 60px;
 }
 
 .container-cadastro{
@@ -1405,4 +1407,47 @@ header{
     display: flex;
     align-items: center;
     outline: 0;
+}
+
+
+
+.radio{
+    /*align-items: center;*/
+    cursor: pointer;
+    transform: translate(10%, 165%);
+}
+
+.radio__input{
+    display: none;
+}
+
+.radio__radio{
+    width: 1.30em;
+    height: 1.30em;
+    min-width: 1.30em;
+    min-height: 1.30em;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-sizing: border-box;
+    padding: 3px;
+    /*float: left;
+    margin-left: 15px;
+    margin-top: 35.5px;*/
+    display: inline-block;
+}
+
+.radio__radio::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: rgb(161, 99, 245);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.15s;
+}
+
+.radio__input:checked + .radio__radio::after{
+    transform: scale(1);
 }

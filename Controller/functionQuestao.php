@@ -30,23 +30,28 @@ function montaQuestao($idQuestao){
                 .'<div style="color: #C0BABB;">'
                     .'<p style="padding: 6px;">Selecione a alternativa correta: </p>'
                     .'<label class="label-questao" onclick=select("id1") id="id1">'
-                        .'<input type="radio" name="certa" value="A" id="radioA">'
+                        .'<input type="radio" name="certa" value="A" id="radioA" class="radio__input">'
+                        .'<div class="radio__radio"></div>'
                         .$campo['AlternativaA']
                     .'</label>'
                     .'<label class="label-questao" onclick=select("id2") id="id2">'
-                        .'<input type="radio" name="certa" value="B" id="radioB">'
+                        .'<input type="radio" name="certa" value="B" id="radioB" class="radio__input">'
+                        .'<div class="radio__radio"></div>'
                         .$campo['AlternativaB']
                     .'</label>'
                     .'<label class="label-questao" onclick=select("id3") id="id3">'
-                        .'<input type="radio" name="certa" value="C" id="radioC">'
+                        .'<input type="radio" name="certa" value="C" id="radioC" class="radio__input">'
+                        .'<div class="radio__radio"></div>'
                         .$campo['AlternativaC']
                     .'</label>'
                     .'<label class="label-questao" onclick=select("id4") id="id4">'
-                        .'<input type="radio" name="certa" value="D" id="radioD">'
+                        .'<input type="radio" name="certa" value="D" id="radioD" class="radio__input">'
+                        .'<div class="radio__radio"></div>'
                         .$campo['AlternativaD']
                     .'</label>'
                     .'<label class="label-questao" onclick=select("id5") id="id5">'
-                        .'<input type="radio" name="certa" value="E" id="radioE">'
+                        .'<input type="radio" name="certa" value="E" id="radioE" class="radio__input">'
+                        .'<div class="radio__radio"></div>'
                         .$campo['AlternativaE']
                     .'</label><br>'
                 .'</div>'

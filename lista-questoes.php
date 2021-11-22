@@ -192,7 +192,6 @@
         }
 
         // MODAL
-
         function iniciaModal(modalID,idQuestao) {
 
             const modal = document.getElementById(modalID);
