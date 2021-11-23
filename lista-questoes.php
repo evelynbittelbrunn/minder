@@ -3,7 +3,10 @@
     include('Controller/function.php');
     carregaPerfil($_SESSION['idUsuario']); 
     if (isset($_SESSION['AnoFiltro']) || isset($_SESSION['idBancaFiltro']) || isset($_SESSION['questoesRespondidas'])){
-        session_destroy();
+        //session_destroy();
+        unset($_SESSION['AnoFiltro']);
+        unset($_SESSION['idBancaFiltro']);
+        unset($_SESSION['questoesRespondidas']);
     }
 ?>
 <!DOCTYPE html>
