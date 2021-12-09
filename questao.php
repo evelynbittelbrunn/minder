@@ -75,9 +75,9 @@
             <form method="POST" enctype="multipart/form-data" id="iQuestao">
                 <div class="card-question">
                     <div class="cont-text" align="center">
-                        23/58
+                        <?php echo questaoAtual($_GET['a'], $_GET['q']); ?>/<?php echo contabilizaTotal($_GET['a']); ?>
                     </div>
-                        <?php echo montaQuestao($_GET['q']); ?>
+                        <?php echo montaQuestao($_GET['a'], $_GET['q']); ?>
                 </div>            
             </form>
         </div>
