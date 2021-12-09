@@ -25,22 +25,26 @@
 <body class="body-login">
     <main class="main-login">
         <div class="ilustracao">
-            <h3>Minder ;)</h3>
-            <h2>Seja um expert!</h2>
+            <!--<h3>Minder ;)</h3>
+            <h2>Seja um expert!</h2>-->
             <img src="img/estatua.png" alt="Minder">
         </div>
         <div class="conteudo">
-            <h2>Troca de senha</h2>            
-            <div class="conteudo-form">
-                <form method="POST" action="controller/trocaSenha.php" id="iFIndex" name="nFIndex">
-                    <input type="password" placeholder="Senha antiga" id="iOldPass" name="nOldPass">
-                    <input type="password" placeholder="Nova senha" id="iNewPass"name="nNewPass">
-                    <input type="password" placeholder="Conirmar senha" id="iPassConf" name="nPassConf">
-                    <button>Trocar senha</button>
-                    <p><?php echo $_SESSION['msg-troca']; ?></p>
-                    <a href="login" class="voltarLogin">Entrar</a>
-                </form>
-            </div>            
+            <div style="width:100%">
+                <h2>Troca de senha</h2>            
+                <div class="conteudo-form">
+                    <form method="POST" action="controller/trocaSenha.php" id="iFIndex" name="nFIndex">
+                        <input type="password" placeholder="Senha antiga" id="iOldPass" name="nOldPass">
+                        <input type="password" placeholder="Nova senha" id="iNewPass"name="nNewPass">
+                        <input type="password" placeholder="Conirmar senha" id="iPassConf" name="nPassConf">
+                        <br>
+                        <button>Trocar senha</button>
+                        <p><?php echo $_SESSION['msg-troca']; ?></p>
+                        <br>
+                        <a href="login" class="voltarLogin">Entrar</a>
+                    </form>
+                </div>       
+            </div>                 
         </div>
     </main>
 </body>
