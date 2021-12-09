@@ -25,26 +25,28 @@
 <body class="body-login">
     <main class="main-login">
         <div class="ilustracao">
-            <h3>Minder ;)</h3>
-            <h2>Seja um expert!</h2>
+            <!--<h3>Minder ;)</h3>
+            <h2>Seja um expert!</h2>-->
             <img src="img/estatua.png" alt="Minder">
         </div>
         <div class="conteudo">
-            <h2>Recuperar Senha</h2>            
-            <div class="conteudo-form">
-                <form method="POST" action="Controller/enviaEmail.php" id="iFIndex" name="nFIndex">
-                    <input type="text" id="iNewLogin" name="nNewLogin" placeholder="Email">
-                    <br>
-                    <button>Enviar</button>
-                    <br>
-                    <p>
-                        <?php 
-                            echo $_SESSION['msg-senha']; 
-                        ?>
-                    </p>
-                    <a href="login" class="voltarLogin">Voltar</a>
-                </form>
-            </div>            
+            <div style="width: 100%;">
+                <h2>Recuperar Senha</h2>            
+                <div class="conteudo-form">
+                    <form method="POST" action="Controller/enviaEmail.php" id="iFIndex" name="nFIndex">
+                        <input type="text" id="iNewLogin" name="nNewLogin" placeholder="Email">
+                        <br>
+                        <button>Enviar</button>
+                        <br>
+                        <p>
+                            <?php 
+                                echo $_SESSION['msg-senha']; 
+                            ?>
+                        </p>
+                        <a href="login" class="voltarLogin">Voltar</a>
+                    </form>
+                </div>            
+            </div>
         </div>
     </main>
 </body>

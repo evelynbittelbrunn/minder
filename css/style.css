@@ -934,7 +934,7 @@ header{
 .ilustracao img{
     height: 380px;
     position: absolute;
-    left: 28%;
+    border-radius: 20px;
     bottom: 0;
 }
 
@@ -943,6 +943,14 @@ header{
     height: 100%;
     border-radius: 0 20px 20px 0;
     color: #C0BABB;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.conteudo h2{
+    text-align: center;
 }
 
 .conteudo-form form input{
@@ -951,7 +959,7 @@ header{
     border: 0;
     border-bottom: 1px solid #A855FF;
     padding: 10px 8px;
-    width: 65%;
+    width: 100%;
     display: block;
     margin: 0 auto;
     color: #C0BABB;
@@ -968,6 +976,7 @@ header{
     color: #171C21;
     font-size: 1em;
     font-weight: 600;
+    border: 1px solid #A855FF;
 }
 
 .conteudo-form form button:hover{
@@ -980,6 +989,10 @@ header{
 .voltarLogin {
     display: table;
     margin: 0 auto;
+}
+
+.conteudo-form a:hover{
+    color: #A855FF;
 }
 
 /* TELA QUESTÕES */

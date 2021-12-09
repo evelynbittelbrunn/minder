@@ -25,26 +25,32 @@
 <body class="body-login">
     <main class="main-login">
         <div class="ilustracao">
-            <h3>Minder ;)</h3>
-            <h2>Seja um expert!</h2>
+            <!--<h3>Minder ;)</h3>
+            <h2>Seja um expert!</h2>-->
             <img src="img/estatua.png" alt="Minder">
         </div>
         <div class="conteudo">
-            <h2>Junte-se a nós!</h2>            
-            <div class="conteudo-form">
-                <form method="POST" action="Controller/validaLogin.php" id="iFIndex" name="nFIndex">
-                    Email:
-                    <input type="text" id="iLogin" name="nLogin">
-                    <br>
-                    Senha:
-                    <input type="password" id="iPass" name="nPass">
-                    <br>
-                    <button>Enviar</button>
-                    <br>
-                    <p><?php echo $_SESSION['msg-login']; ?></p>
-                    <a href="cadastro">Novo? Crie uma conta agora!</a>
-                    <a href="esqueceu_senha">Esqueceu a senha?</a>
-                </form>
+            <div style="width: 100%;">
+                <h2>Junte-se a nós!</h2>            
+                <div class="conteudo-form">
+                    <form method="POST" action="Controller/validaLogin.php" id="iFIndex" name="nFIndex">
+                        Email:
+                        <input type="text" id="iLogin" name="nLogin">
+                        <br>
+                        Senha:
+                        <input type="password" id="iPass" name="nPass">
+                        <br>
+                        <button>Enviar</button>
+                        <br>
+                        <p><?php echo $_SESSION['msg-login']; ?></p>
+                        <div style="text-align: center;">
+                            <a href="cadastro">Novo por aqui? Crie uma conta agora!</a>
+                            <br>
+                            <br>
+                            <a href="esqueceu_senha">Esqueceu a senha?</a>
+                        </div>                        
+                    </form>
+                </div>            
             </div>            
         </div>
     </main>

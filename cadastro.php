@@ -25,22 +25,24 @@
 <body class="body-login">
     <main class="main-login">
         <div class="ilustracao">
-            <h3>Minder ;)</h3>
-            <h2>Seja um expert!</h2>
             <img src="img/estatua.png" alt="Minder">
         </div>
         <div class="conteudo">
-            <h2>Junte-se a nós!</h2>            
-            <div class="conteudo-form">
-                <form method="POST" action="controller/salvaLogin.php" id="iFIndex" name="nFIndex">
-                    <input type="text" placeholder="Nome completo" id="iNewNome" name="nNewNome">
-                    <input type="text" placeholder="E-mail" id="iNewLogin"name="nNewLogin">
-                    <input type="password" placeholder="Senha" id="iNewPass" name="nNewPass">
-                    <button>Cadastrar</button>
-                    <p><?php echo $_SESSION['msg-salva']; ?></p>
-                    <a href="login" class="voltarLogin">Entrar</a>
-                </form>
-            </div>            
+            <div style="width: 100%;">
+                <h2>Junte-se a nós!</h2>            
+                <div class="conteudo-form">
+                    <form method="POST" action="controller/salvaLogin.php" id="iFIndex" name="nFIndex">
+                        <input type="text" placeholder="Nome completo" id="iNewNome" name="nNewNome">
+                        <input type="text" placeholder="E-mail" id="iNewLogin"name="nNewLogin">
+                        <input type="password" placeholder="Senha" id="iNewPass" name="nNewPass">
+                        <br>
+                        <button>Cadastrar</button>
+                        <p><?php echo $_SESSION['msg-salva']; ?></p>
+                        <br>
+                        <a href="login" class="voltarLogin">Já possui uma conta? Clique aqui e conecte-se!</a>
+                    </form>
+                </div>        
+            </div>                
         </div>
     </main>
 </body>
